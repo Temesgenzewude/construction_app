@@ -1,8 +1,7 @@
 import 'package:construction_app/src/common_widgets/404_page.dart';
-import 'package:construction_app/src/features/onboarding/presentation/screens/auth_screen.dart';
-import 'package:construction_app/src/features/authentication/presentation/login_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/screens/signup_screen.dart';
+import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
-import 'package:construction_app/src/features/authentication/presentation/signup_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +33,7 @@ class _MainRouterState extends State<MainRouter> {
           path: '/${AppRoutes.AuthScreen.name}',
           name: AppRoutes.AuthScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state, const AuthScreen()),
+              context, state, const BeginScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.OnBoardingScreen.name}',
@@ -46,7 +45,7 @@ class _MainRouterState extends State<MainRouter> {
           path: '/${AppRoutes.LoginScreen.name}',
           name: AppRoutes.LoginScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state,  const LoginScreen()),
+              context, state,  const BeginScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.SignupScreen.name}',

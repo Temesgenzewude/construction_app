@@ -1,10 +1,9 @@
 import 'package:construction_app/src/features/onboarding/presentation/widgets/custom_button.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-class AuthScreen extends StatelessWidget {
-  const AuthScreen({Key? key});
+class BeginScreen extends StatelessWidget {
+  const BeginScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
