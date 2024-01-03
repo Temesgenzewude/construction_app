@@ -1,8 +1,8 @@
 import 'package:construction_app/src/common_widgets/404_page.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/auth_screen.dart';
-import 'package:construction_app/src/features/onboarding/presentation/screens/login_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/login_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
-import 'package:construction_app/src/features/onboarding/presentation/screens/signup_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/signup_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
