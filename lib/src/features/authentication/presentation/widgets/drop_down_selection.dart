@@ -4,14 +4,14 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 class DropDownSelection extends HookWidget {
   const DropDownSelection({
     super.key,
-    required this.countries,
-    required this.countryState,
+    required this.companies,
+    required this.companyState,
     required this.lable,
     required this.hintText,
   });
 
-  final List<Map<String, dynamic>> countries;
-  final ValueNotifier<String> countryState;
+  final List<Map<String, dynamic>> companies;
+  final ValueNotifier<String> companyState;
   final String lable;
   final String hintText;
 
@@ -32,10 +32,27 @@ class DropDownSelection extends HookWidget {
         ),
         Container(
           width: double.infinity,
-          padding: const EdgeInsets.only(left: 10),
-          decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.grey),
-            borderRadius: const BorderRadius.all(Radius.circular(12)),
+          padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
+          clipBehavior: Clip.antiAlias,
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            shadows: const [
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 2,
+                offset: Offset(1, 1),
+                spreadRadius: 0,
+              ),
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 2,
+                offset: Offset(-1, -1),
+                spreadRadius: 0,
+              )
+            ],
           ),
           child: DropdownButtonFormField(
             decoration: const InputDecoration(border: InputBorder.none),
@@ -49,14 +66,14 @@ class DropDownSelection extends HookWidget {
                 height: 0,
               ),
             ),
-            items: countries.map((currentCountryountry) {
+            items: companies.map((currentCountryountry) {
               return DropdownMenuItem<String>(
                 value: currentCountryountry["name"],
                 child: Text(currentCountryountry["name"]),
               );
             }).toList(),
             onChanged: (String? value) {
-              countryState.value = value!;
+              companyState.value = value!;
             },
           ),
         ),

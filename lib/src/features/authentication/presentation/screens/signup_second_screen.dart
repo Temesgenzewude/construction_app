@@ -15,7 +15,7 @@ class SignupSecondScreen extends StatefulHookWidget {
 }
 
 class _SignupSecondScreenState extends State<SignupSecondScreen> {
-  List<Map<String, dynamic>> countries = [
+  List<Map<String, dynamic>> companies = [
     {
       'name': 'Ethiopia',
     },
@@ -40,7 +40,7 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
       'flag': "Au",
     },
   ];
-  List<Map<String, dynamic>> states = [
+  List<Map<String, dynamic>> employee = [
     {
       'name': 'Wählen Mitarbeiter',
     },
@@ -54,9 +54,9 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final countryState = useState("");
+    final employeeState = useState("");
     final countryCodeState = useState("");
-    final countryStateState = useState("");
+    final companyState = useState("");
     TextEditingController phoneNumberController = useTextEditingController();
 
     return Scaffold(
@@ -115,10 +115,10 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
               ),
               const SizedBox(height: 24),
 
-              //! COUNTRY SELECTION
+              //! Company SELECTION
               DropDownSelection(
-                countries: states,
-                countryState: countryState,
+                companies: companies,
+                companyState: companyState,
                 lable: 'Unternehmen',
                 hintText: 'Unternehmenstyp',
               ),
@@ -131,10 +131,10 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
                 phoneNumberController: phoneNumberController,
               ),
 
-              //! COUNTRY STATE SELECTION
+              //! employee STATE SELECTION
               DropDownSelection(
-                countries: countries,
-                countryState: countryStateState,
+                companies: employee,
+                companyState: employeeState,
                 lable: 'Mitarbeiter',
                 hintText: 'Wählen Mitarbeiter',
               ),

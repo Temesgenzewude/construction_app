@@ -77,7 +77,7 @@ class PremiumPlanScreen extends HookWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 24.0),
+            const SizedBox(height: 63.0),
             CustomButton(
               onTap: () {},
               buttonName: 'Plan starten',

@@ -30,7 +30,7 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 100),
+              const SizedBox(height: 70),
               const Center(
                 child: Text(
                   companyName,
@@ -86,14 +86,14 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
               CustomTextField(
                 controller: emailController,
                 label: 'Email',
-                prefixIcon: const Icon(Icons.email),
+                prefixIcon: const Icon(Icons.email_outlined),
                 obscurePassword: false,
               ),
               const SizedBox(height: 10.0),
               CustomTextField(
                 controller: passwordController,
                 label: 'Passwort',
-                prefixIcon: const Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.lock_outline),
                 suffixIcon: IconButton(
                   icon: Icon(
                     _obscurePassword ? Icons.visibility_off : Icons.visibility,

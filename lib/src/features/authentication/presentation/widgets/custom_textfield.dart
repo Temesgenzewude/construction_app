@@ -31,17 +31,35 @@ class CustomTextField extends HookWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
+        const SizedBox(height: 2),
         Container(
-          padding: const EdgeInsets.only(left: 10),
-          decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.grey),
-                  borderRadius: const BorderRadius.all(Radius.circular(12)),
-                ),
+          padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
+          clipBehavior: Clip.antiAlias,
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            shadows: const [
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 2,
+                offset: Offset(1, 1),
+                spreadRadius: 0,
+              ),
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 2,
+                offset: Offset(-1, -1),
+                spreadRadius: 0,
+              ),
+            ],
+          ),
           child: TextFormField(
             controller: controller,
             obscureText: obscurePassword,
             decoration: InputDecoration(
-              border:InputBorder.none,
+              border: InputBorder.none,
               prefixIcon: prefixIcon,
               suffixIcon: suffixIcon,
             ),

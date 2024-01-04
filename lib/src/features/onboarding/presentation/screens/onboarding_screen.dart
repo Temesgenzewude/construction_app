@@ -38,7 +38,7 @@ class OnboardingScreen extends HookWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 425,
+            height: MediaQuery.of(context).size.height * 0.6,
             child: Container(
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(

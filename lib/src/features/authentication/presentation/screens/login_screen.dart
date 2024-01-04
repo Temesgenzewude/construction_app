@@ -71,14 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
               CustomTextField(
                 controller: emailController,
                 label: 'Email',
-                prefixIcon: const Icon(Icons.email),
+                prefixIcon: const Icon(Icons.email_outlined),
                 obscurePassword: false,
               ),
               const SizedBox(height: 20.0),
               CustomTextField(
                 controller: passwordController,
                 label: 'Passwort',
-                prefixIcon: const Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.lock_outline),
                 suffixIcon: IconButton(
                   icon: Icon(
                     obscurePassword.value
