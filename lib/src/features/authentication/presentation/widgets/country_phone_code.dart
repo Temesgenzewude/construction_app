@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -30,87 +31,111 @@ class CountryPhoneCodeInput extends HookWidget {
               height: 0,
             ),
           ),
+          const SizedBox(height: 2),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 130,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    top: BorderSide(
-                        width: 1.0,
-                        color: Colors.grey), // Top border for left input
-                    left: BorderSide(
-                        width: 1.0,
-                        color: Colors.grey), // Left border for left input
-                    bottom: BorderSide(
-                        width: 1.0,
-                        color: Colors.grey), // Bottom border for left input
+                // width: 130,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
+                clipBehavior: Clip.antiAlias,
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    bottomLeft: Radius.circular(11),
-                  ),
+                  shadows: const [
+                    BoxShadow(
+                      color: Color(0x3F000000),
+                      blurRadius: 2,
+                      offset: Offset(1, 1),
+                      spreadRadius: 0,
+                    ),
+                    BoxShadow(
+                      color: Color(0x3F000000),
+                      blurRadius: 2,
+                      offset: Offset(-1, -1),
+                      spreadRadius: 0,
+                    )
+                  ],
                 ),
-                child: DropdownButtonFormField(
-                  decoration: const InputDecoration(
-                    hintText: " US(+148)",
-                    border: InputBorder.none,
-                  ),
-                  // value: countryCodeState.value.isNotEmpty ? countryCodeState.value : null,
-                  onChanged: (String? newValue) {
-                    countryCodeState.value = newValue!;
-                  },
-                  items: countriesCode.map<DropdownMenuItem<String>>((country) {
-                    return DropdownMenuItem(
-                      value: country['code'],
-                      child: Text(' ${country['flag']}(${country['code']})'),
-                    );
-                  }).toList(),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please select a country code';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(
-                          width: 1.0,
-                          color: Colors.grey), // Top border for left input
-                      right: BorderSide(
-                          width: 1.0,
-                          color: Colors.grey), // Left border for left input
-                      bottom: BorderSide(
-                          width: 1.0,
-                          color: Colors.grey), // Bottom border for left input
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: CountryCodePicker(
+                        onChanged: (CountryCode countryCode) {},
+                        // Initial selectioön and favorite can be one of code ('IT') OR dial_code('+39')
+                        initialSelection: 'IT',
+                        favorite: const ['+39', 'FR'],
+                        showCountryOnly: false,
+                        showOnlyCountryWhenClosed: false,
+                        alignLeft: false,
+                      ),
                     ),
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(12),
-                      bottomRight: Radius.circular(11),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: TextFormField(
+                        controller: phoneNumberController,
+                        keyboardType: TextInputType.phone,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          hintText: '8559-5938-004',
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a phone number';
+                          }
+                          return null;
+                        },
+                      ),
                     ),
-                  ),
-                  child: TextFormField(
-                    controller: phoneNumberController,
-                    keyboardType: TextInputType.phone,
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: '8559-5938-004',
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter a phone number';
-                      }
-                      return null;
-                    },
-                  ),
+                  ],
                 ),
               ),
+              // Expanded(
+              //   flex: 1,
+              //   child: Container(
+              //     padding:
+              //         const EdgeInsets.symmetric(horizontal: 11, vertical: 8),
+              //     clipBehavior: Clip.antiAlias,
+              //     decoration: ShapeDecoration(
+              //       color: Colors.white,
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(10),
+              //       ),
+              //       shadows: const [
+              //         BoxShadow(
+              //           color: Color(0x3F000000),
+              //           blurRadius: 2,
+              //           offset: Offset(1, 1),
+              //           spreadRadius: 0,
+              //         ),
+              //         BoxShadow(
+              //           color: Color(0x3F000000),
+              //           blurRadius: 2,
+              //           offset: Offset(-1, -1),
+              //           spreadRadius: 0,
+              //         )
+              //       ],
+              //     ),
+              //     child: TextFormField(
+              //       controller: phoneNumberController,
+              //       keyboardType: TextInputType.phone,
+              //       decoration: const InputDecoration(
+              //         border: InputBorder.none,
+              //         hintText: '8559-5938-004',
+              //       ),
+              //       validator: (value) {
+              //         if (value == null || value.isEmpty) {
+              //           return 'Please enter a phone number';
+              //         }
+              //         return null;
+              //       },
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ],

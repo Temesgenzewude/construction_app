@@ -3,6 +3,7 @@ import 'package:construction_app/src/features/authentication/presentation/widget
 import 'package:construction_app/src/features/authentication/presentation/widgets/custom_button.dart';
 import 'package:construction_app/src/features/authentication/presentation/widgets/drop_down_selection.dart';
 import 'package:construction_app/src/routing/routing.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -71,7 +72,7 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
               IconButton(
                 icon: const Icon(Icons.arrow_back),
                 onPressed: () {
-                  context.go("/${AppRoutes.SignupFirstScreen.name}")  ;
+                  context.go("/${AppRoutes.SignupFirstScreen.name}");
                 },
               ),
               const Center(
@@ -130,6 +131,7 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
                 countryCodeState: countryCodeState,
                 phoneNumberController: phoneNumberController,
               ),
+              
 
               //! employee STATE SELECTION
               DropDownSelection(

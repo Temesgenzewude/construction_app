@@ -30,6 +30,7 @@ class DropDownSelection extends HookWidget {
             height: 0,
           ),
         ),
+        const SizedBox(height: 2),
         Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
