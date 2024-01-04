@@ -154,7 +154,7 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
               //!  REGISTAR BUTTON
               CustomButton(
                 onTap: () {
-                  context.go('/${AppRoutes.PlanScreen.name}');
+                  context.go('/${AppRoutes.PremiumPlanScreen.name}');
                 },
                 buttonName: 'Registrieren',
                 topbottom: 15,

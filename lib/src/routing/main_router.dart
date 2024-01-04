@@ -1,6 +1,6 @@
 import 'package:construction_app/src/common_widgets/404_page.dart';
 import 'package:construction_app/src/features/authentication/presentation/screens/login_screen.dart';
-import 'package:construction_app/src/features/authentication/presentation/screens/plan_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/screens/premium_plan_screen.dart';
 import 'package:construction_app/src/features/authentication/presentation/screens/signup_first_screen.dart';
 import 'package:construction_app/src/features/authentication/presentation/screens/signup_second_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
@@ -63,10 +63,10 @@ class _MainRouterState extends State<MainRouter> {
               context, state,  const SignupSecondScreen()),
         ),
         GoRoute(
-          path: '/${AppRoutes.PlanScreen.name}',
-          name: AppRoutes.PlanScreen.name,
+          path: '/${AppRoutes.PremiumPlanScreen.name}',
+          name: AppRoutes.PremiumPlanScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state,  const PlanScreen()),
+              context, state,  const PremiumPlanScreen()),
         ),
       ],
     );
