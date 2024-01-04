@@ -1,9 +1,11 @@
+import 'package:construction_app/src/constants/constant.dart';
 import 'package:construction_app/src/features/onboarding/presentation/widgets/custom_button.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class BeginScreen extends StatelessWidget {
-  const BeginScreen({Key? key});
+class BeginScreen extends HookWidget {
+  const BeginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class BeginScreen extends StatelessWidget {
               children: [
                 SizedBox(height: 100),
                 Text(
-                  'bView',
+                  companyName,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40,
@@ -56,7 +58,7 @@ class BeginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomButton(
-                          routeName: AppRoutes.SignupScreen.name,
+                          routeName: AppRoutes.SignupFirstScreen.name,
                           buttonName: 'Registrieren',
                           topbottom: 15,
                           leftright: 80,
@@ -65,7 +67,7 @@ class BeginScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 24),
                         CustomButton(
-                          routeName: AppRoutes.SignupScreen.name,
+                          routeName: AppRoutes.LoginScreen.name,
                           buttonName: 'Anmeldung',
                           topbottom: 15,
                           leftright: 80,

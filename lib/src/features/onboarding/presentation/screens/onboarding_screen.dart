@@ -2,18 +2,12 @@ import 'package:construction_app/src/features/onboarding/presentation/widgets/cu
 import 'package:construction_app/src/features/onboarding/presentation/widgets/onboarding_card.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnboardingScreen extends StatefulWidget {
-  OnboardingScreen({Key? key});
+class OnboardingScreen extends HookWidget {
+  OnboardingScreen({super.key});
 
-  @override
-  _OnboardingScreenState createState() => _OnboardingScreenState();
-}
-
-class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _pageController = PageController();
-  int _currentPage = 0;
   final List<Widget> _pages = [
     const OnboardingCard(
       description:
@@ -33,13 +27,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   ];
 
   @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final currentPage = useState(0);
+    final pageController = usePageController();
+
     return Scaffold(
       backgroundColor: const Color(0xFF041675),
       body: Column(
@@ -56,12 +47,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               child: PageView.builder(
-                controller: _pageController,
+                controller: pageController,
                 itemCount: _pages.length,
                 onPageChanged: (index) {
-                  setState(() {
-                    _currentPage = index;
-                  });
+                  currentPage.value = index;
                 },
                 itemBuilder: (context, index) {
                   return _pages[index];
@@ -80,7 +69,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SmoothPageIndicator(
-                          controller: _pageController,
+                          controller: pageController,
                           count: _pages.length,
                           effect: const WormEffect(
                             dotWidth: 10,

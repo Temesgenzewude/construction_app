@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class OnboardingCard extends StatelessWidget {
+class OnboardingCard extends HookWidget {
   const OnboardingCard(
       {super.key, required this.description, required this.imageUrl});
 

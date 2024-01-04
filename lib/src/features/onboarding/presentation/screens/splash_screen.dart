@@ -1,9 +1,10 @@
+import 'package:construction_app/src/constants/constant.dart';
 import 'package:construction_app/src/features/onboarding/presentation/widgets/custom_button.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends HookWidget {
   const SplashScreen({super.key});
 
   @override
@@ -19,7 +20,7 @@ class SplashScreen extends StatelessWidget {
               children: [
                 SizedBox(height: 100),
                 Text(
-                  'bView',
+                  companyName,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40,
