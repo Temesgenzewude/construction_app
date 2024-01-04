@@ -1,5 +1,8 @@
 import 'package:construction_app/src/common_widgets/404_page.dart';
-import 'package:construction_app/src/features/authentication/presentation/screens/signup_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/screens/login_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/screens/plan_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/screens/signup_first_screen.dart';
+import 'package:construction_app/src/features/authentication/presentation/screens/signup_second_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
@@ -45,13 +48,25 @@ class _MainRouterState extends State<MainRouter> {
           path: '/${AppRoutes.LoginScreen.name}',
           name: AppRoutes.LoginScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state,  const BeginScreen()),
+              context, state,  const LoginScreen()),
         ),
         GoRoute(
-          path: '/${AppRoutes.SignupScreen.name}',
-          name: AppRoutes.SignupScreen.name,
+          path: '/${AppRoutes.SignupFirstScreen.name}',
+          name: AppRoutes.SignupFirstScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state,  const SignupScreen()),
+              context, state,  const SignupFirstScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.SignupSecondScreen.name}',
+          name: AppRoutes.SignupSecondScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state,  const SignupSecondScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.PlanScreen.name}',
+          name: AppRoutes.PlanScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state,  const PlanScreen()),
         ),
       ],
     );

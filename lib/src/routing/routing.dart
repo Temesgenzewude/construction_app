@@ -6,5 +6,7 @@ enum AppRoutes {
   OnBoardingScreen,
   AuthScreen,
   LoginScreen,
-  SignupScreen,
+  SignupFirstScreen,
+  SignupSecondScreen,
+  PlanScreen,
 }
