@@ -16,130 +16,82 @@ class CountryPhoneCodeInput extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Telefon:',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w600,
-              height: 0,
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Telefon:',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w600,
+            height: 0,
           ),
-          const SizedBox(height: 2),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                // width: 130,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
-                clipBehavior: Clip.antiAlias,
-                decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  shadows: const [
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 2,
-                      offset: Offset(1, 1),
-                      spreadRadius: 0,
-                    ),
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 2,
-                      offset: Offset(-1, -1),
-                      spreadRadius: 0,
-                    )
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      child: CountryCodePicker(
-                        onChanged: (CountryCode countryCode) {},
-                        // Initial selectioön and favorite can be one of code ('IT') OR dial_code('+39')
-                        initialSelection: 'IT',
-                        favorite: const ['+39', 'FR'],
-                        showCountryOnly: false,
-                        showOnlyCountryWhenClosed: false,
-                        alignLeft: false,
-                      ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      child: TextFormField(
-                        controller: phoneNumberController,
-                        keyboardType: TextInputType.phone,
-                        decoration: const InputDecoration(
-                          border: InputBorder.none,
-                          hintText: '8559-5938-004',
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter a phone number';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+        ),
+        const SizedBox(height: 2),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
+          clipBehavior: Clip.antiAlias,
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            shadows: const [
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 2,
+                offset: Offset(1, 1),
+                spreadRadius: 0,
               ),
-              // Expanded(
-              //   flex: 1,
-              //   child: Container(
-              //     padding:
-              //         const EdgeInsets.symmetric(horizontal: 11, vertical: 8),
-              //     clipBehavior: Clip.antiAlias,
-              //     decoration: ShapeDecoration(
-              //       color: Colors.white,
-              //       shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(10),
-              //       ),
-              //       shadows: const [
-              //         BoxShadow(
-              //           color: Color(0x3F000000),
-              //           blurRadius: 2,
-              //           offset: Offset(1, 1),
-              //           spreadRadius: 0,
-              //         ),
-              //         BoxShadow(
-              //           color: Color(0x3F000000),
-              //           blurRadius: 2,
-              //           offset: Offset(-1, -1),
-              //           spreadRadius: 0,
-              //         )
-              //       ],
-              //     ),
-              //     child: TextFormField(
-              //       controller: phoneNumberController,
-              //       keyboardType: TextInputType.phone,
-              //       decoration: const InputDecoration(
-              //         border: InputBorder.none,
-              //         hintText: '8559-5938-004',
-              //       ),
-              //       validator: (value) {
-              //         if (value == null || value.isEmpty) {
-              //           return 'Please enter a phone number';
-              //         }
-              //         return null;
-              //       },
-              //     ),
-              //   ),
-              // ),
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 2,
+                offset: Offset(-1, -1),
+                spreadRadius: 0,
+              )
             ],
           ),
-        ],
-      ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  CountryCodePicker(
+                    padding: const EdgeInsets.all(0),
+                    onChanged: (CountryCode countryCode) {},
+                    initialSelection: 'IT',
+                    favorite: const ['+39', 'FR'],
+                    showCountryOnly: false,
+                    showOnlyCountryWhenClosed: false,
+                    alignLeft: false,
+                    flagWidth: 20.0,
+                  ),
+                  const Icon(Icons.arrow_drop_down),
+                ],
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width *0.35,
+                child: TextFormField(
+                  controller: phoneNumberController,
+                  keyboardType: TextInputType.phone,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    hintText: '8559-5938-004',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a phone number';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

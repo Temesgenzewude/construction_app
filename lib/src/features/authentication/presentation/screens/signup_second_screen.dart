@@ -67,7 +67,7 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               //! BACK BUTTON
               IconButton(
                 icon: const Icon(Icons.arrow_back),
@@ -132,8 +132,9 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
                 phoneNumberController: phoneNumberController,
               ),
               
+              const SizedBox(height: 10),
 
-              //! employee STATE SELECTION
+              //! employee employee SELECTION
               DropDownSelection(
                 companies: employee,
                 companyState: employeeState,
