@@ -1,3 +1,4 @@
+import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -13,7 +14,7 @@ class OnboardingCard extends HookWidget {
     return Column(
       children: [
         Container(
-          height: 337,
+          height:   AppSizer.getHeight(context, 337.0) ,
           decoration:  BoxDecoration(
             image: DecorationImage(
               image: AssetImage(imageUrl),
@@ -31,7 +32,6 @@ class OnboardingCard extends HookWidget {
               fontSize: 13,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w500,
-              height: 0,
             ),
           ),
         ),

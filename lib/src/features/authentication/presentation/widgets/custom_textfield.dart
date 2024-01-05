@@ -1,3 +1,4 @@
+import 'package:construction_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -25,7 +26,7 @@ class CustomTextField extends HookWidget {
         Text(
           '$label:',
           style: const TextStyle(
-            color: Colors.black,
+            color: AppColors.secondaryText,
             fontSize: 16,
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w600,
@@ -33,10 +34,10 @@ class CustomTextField extends HookWidget {
         ),
         const SizedBox(height: 2),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
+          padding: const EdgeInsets.symmetric(horizontal: 11),
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
-            color: Colors.white,
+            color: AppColors.secondary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
