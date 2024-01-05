@@ -61,7 +61,7 @@ class _MainRouterState extends State<MainRouter> {
           path: '/${AppRoutes.SignupSecondScreen.name}',
           name: AppRoutes.SignupSecondScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state,  const SignupSecondScreen()),
+              context, state,   SignupSecondScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.PremiumPlanScreen.name}',
