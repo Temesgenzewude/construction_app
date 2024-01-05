@@ -30,90 +30,92 @@ class HelpScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(
-          left: AppSizer.getWidth(context, 59),
-          right: AppSizer.getWidth(context, 29),
-          top: AppSizer.getHeight(context, 24),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SettingTitle(title: 'Kontakt'),
-            SizedBox(
-              height: AppSizer.getHeight(context, 14),
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.report_gmailerrorred_outlined,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: AppSizer.getWidth(context, 59),
+            right: AppSizer.getWidth(context, 29),
+            top: AppSizer.getHeight(context, 24),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SettingTitle(title: 'Kontakt'),
+              SizedBox(
+                height: AppSizer.getHeight(context, 14),
               ),
-              text: 'Fehler melden',
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.mail_outline,
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.report_gmailerrorred_outlined,
+                ),
+                text: 'Fehler melden',
               ),
-              text: 'Fultion anfragen',
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.help_outline,
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.mail_outline,
+                ),
+                text: 'Fultion anfragen',
               ),
-              text: 'Frage stellen',
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.tv,
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.help_outline,
+                ),
+                text: 'Frage stellen',
               ),
-              text: 'Demo anfordern',
-            ),
-            SizedBox(
-              height: AppSizer.getHeight(context, 20),
-            ),
-            SettingTitle(
-              title: 'App Info',
-            ),
-            SizedBox(
-              height: AppSizer.getHeight(context, 14),
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.widgets_outlined,
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.tv,
+                ),
+                text: 'Demo anfordern',
               ),
-              text: 'Anwendung bewerten',
-            ),
-            const Text(
-              'Version 1.99.0',
-              style: TextStyle(fontSize: 12),
-            ),
-            SizedBox(
-              height: AppSizer.getHeight(context, 20),
-            ),
-            SettingTitle(
-              title: 'Debug Tools',
-            ),
-            SizedBox(
-              height: AppSizer.getHeight(context, 14),
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.storage,
+              SizedBox(
+                height: AppSizer.getHeight(context, 20),
               ),
-              text: 'Cache Ioschen',
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.file_download_outlined,
+              SettingTitle(
+                title: 'App Info',
               ),
-              text: 'Downloads erzwingen',
-            ),
-            HelpSettingTile(
-              icon: const Icon(
-                Icons.file_upload_outlined,
+              SizedBox(
+                height: AppSizer.getHeight(context, 14),
               ),
-              text: 'Uploads erzwingen',
-            ),
-          ],
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.widgets_outlined,
+                ),
+                text: 'Anwendung bewerten',
+              ),
+              const Text(
+                'Version 1.99.0',
+                style: TextStyle(fontSize: 12),
+              ),
+              SizedBox(
+                height: AppSizer.getHeight(context, 20),
+              ),
+              SettingTitle(
+                title: 'Debug Tools',
+              ),
+              SizedBox(
+                height: AppSizer.getHeight(context, 14),
+              ),
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.storage,
+                ),
+                text: 'Cache Ioschen',
+              ),
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.file_download_outlined,
+                ),
+                text: 'Downloads erzwingen',
+              ),
+              HelpSettingTile(
+                icon: const Icon(
+                  Icons.file_upload_outlined,
+                ),
+                text: 'Uploads erzwingen',
+              ),
+            ],
+          ),
         ),
       ),
     );

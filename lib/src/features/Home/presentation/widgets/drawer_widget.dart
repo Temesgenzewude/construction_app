@@ -64,7 +64,7 @@ class DrawerWidget extends StatelessWidget {
           bottomRight: Radius.circular(0),
         ),
       ),
-      width: AppSizer.getWidth(context, 245),
+      // width: AppSizer.getWidth(context, 245),
       child: Column(
         children: [
           Padding(
