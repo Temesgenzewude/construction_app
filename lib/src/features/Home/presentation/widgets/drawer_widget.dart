@@ -1,7 +1,8 @@
 import 'package:construction_app/src/features/Home/presentation/widgets/drawer_setting.dart';
-import 'package:construction_app/src/features/help/presentation/screens/help_screen.dart';
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class DrawerWidget extends StatelessWidget {
   DrawerWidget({
@@ -31,12 +32,7 @@ class DrawerWidget extends StatelessWidget {
         ),
         'Unterstützung',
         () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const HelpScreen(),
-            ),
-          );
+          context.go('/${AppRoutes.HelpScreen.name}');
         }
       ],
       [
