@@ -70,7 +70,7 @@ class _MainRouterState extends State<MainRouter> {
           name: AppRoutes.SignupSecondScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
 
-              context, state, const SignupSecondScreen()),
+              context, state,  SignupSecondScreen()),
 
         ),
         GoRoute(
