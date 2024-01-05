@@ -41,13 +41,13 @@ class CountryPhoneCodeInput extends HookWidget {
             ),
             shadows: const [
               BoxShadow(
-                color: AppColors.secondary,
+                color: Color(0x3F000000),
                 blurRadius: 2,
                 offset: Offset(1, 1),
                 spreadRadius: 0,
               ),
               BoxShadow(
-                color: AppColors.secondary,
+                color: Color(0x3F000000),
                 blurRadius: 2,
                 offset: Offset(-1, -1),
                 spreadRadius: 0,

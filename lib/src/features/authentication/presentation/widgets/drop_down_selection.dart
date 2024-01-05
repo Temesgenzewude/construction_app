@@ -42,13 +42,13 @@ class DropDownSelection extends HookWidget {
             ),
             shadows: const [
               BoxShadow(
-                color:AppColors.secondaryText,
+                color:Color(0x3F000000),
                 blurRadius: 2,
                 offset: Offset(1, 1),
                 spreadRadius: 0,
               ),
               BoxShadow(
-                color:AppColors.secondaryText,
+                color:Color(0x3F000000),
                 blurRadius: 2,
                 offset: Offset(-1, -1),
                 spreadRadius: 0,
