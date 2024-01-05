@@ -14,15 +14,15 @@ class OnboardingCard extends HookWidget {
     return Column(
       children: [
         Container(
-          height:   AppSizer.getHeight(context, 337.0) ,
-          decoration:  BoxDecoration(
+          height: AppSizer.getHeight(context, 337.0),
+          decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(imageUrl),
-              fit: BoxFit.fill,
+              fit: BoxFit.fitHeight,
             ),
           ),
         ),
-         Padding(
+        Padding(
           padding: const EdgeInsets.only(top: 24, left: 24.0, right: 24.0),
           child: Text(
             description,
