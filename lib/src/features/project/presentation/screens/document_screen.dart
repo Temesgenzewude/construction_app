@@ -1,4 +1,4 @@
-import 'package:construction_app/src/features/projects/widgets/document_card.dart';
+import 'package:construction_app/src/features/project/presentation/widgets/document_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -143,7 +143,7 @@ class DocumentScreen extends HookWidget {
                 onPressed: () {
                   // Add functionality for the ElevatedButton here
                 },
-                child: const Icon(Icons.add),
+                child: Icon(Icons.add),
               ),
             ],
           ),
