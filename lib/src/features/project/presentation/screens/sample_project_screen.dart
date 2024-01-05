@@ -1,6 +1,7 @@
 import 'package:construction_app/src/common_widgets/button.dart';
 import 'package:construction_app/src/common_widgets/setting_tile.dart';
 import 'package:construction_app/src/constants/colors.dart';
+import 'package:construction_app/src/features/project/presentation/widgets/setting_tile.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 
@@ -188,7 +189,7 @@ class _SampleProjectScreenState extends State<SampleProjectScreen> {
                 title: 'Details bearbeiten',
                 width: double.infinity,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
             ],
@@ -199,54 +200,4 @@ class _SampleProjectScreenState extends State<SampleProjectScreen> {
   }
 }
 
-class SettingTile extends StatelessWidget {
-  SettingTile({
-    super.key,
-    required this.text,
-    this.icon,
-    this.suffixText,
-  });
-  String text;
-  bool? icon;
-  String? suffixText;
-  Function()? onPressed = () {};
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Text(
-              text,
-              style: const TextStyle(
-                fontSize: 12,
-              ),
-            )
-          ],
-        ),
-        Row(
-          children: [
-            suffixText != null
-                ? Text(
-                    suffixText!,
-                    style: const TextStyle(
-                      fontSize: 12,
-                    ),
-                  )
-                : SizedBox(),
-            icon != null
-                ? IconButton(
-                    onPressed: onPressed,
-                    icon: const Icon(
-                      Icons.navigate_next,
-                    ),
-                  )
-                : SizedBox(),
-          ],
-        )
-      ],
-    );
-  }
-}
