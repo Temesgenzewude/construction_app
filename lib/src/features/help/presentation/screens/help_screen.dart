@@ -1,8 +1,8 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:construction_app/src/common_widgets/setting_tile.dart';
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/help/presentation/widgets/help_setting.dart';
-import 'package:construction_app/src/features/help/presentation/widgets/setting_title.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 
@@ -43,25 +43,25 @@ class HelpScreen extends StatelessWidget {
             SizedBox(
               height: AppSizer.getHeight(context, 14),
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.report_gmailerrorred_outlined,
               ),
               text: 'Fehler melden',
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.mail_outline,
               ),
               text: 'Fultion anfragen',
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.help_outline,
               ),
               text: 'Frage stellen',
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.tv,
               ),
@@ -76,7 +76,7 @@ class HelpScreen extends StatelessWidget {
             SizedBox(
               height: AppSizer.getHeight(context, 14),
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.widgets_outlined,
               ),
@@ -95,19 +95,19 @@ class HelpScreen extends StatelessWidget {
             SizedBox(
               height: AppSizer.getHeight(context, 14),
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.storage,
               ),
               text: 'Cache Ioschen',
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.file_download_outlined,
               ),
               text: 'Downloads erzwingen',
             ),
-            HelpSettings(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.file_upload_outlined,
               ),

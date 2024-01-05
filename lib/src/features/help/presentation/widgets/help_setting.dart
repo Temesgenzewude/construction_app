@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class HelpSettings extends StatelessWidget {
-  HelpSettings({
+class HelpSettingTile extends StatelessWidget {
+  HelpSettingTile({
     super.key,
     required this.icon,
     required this.text,
