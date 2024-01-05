@@ -22,6 +22,7 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
     final passwordController = useTextEditingController();
     final firstNameController = useTextEditingController();
     final lastNameController = useTextEditingController();
+    final obscurePassword = useState(true);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -96,15 +97,15 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
                 prefixIcon: const Icon(Icons.lock_outline),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                    obscurePassword.value
+                        ? Icons.visibility_off
+                        : Icons.visibility,
                   ),
                   onPressed: () {
-                    setState(() {
-                      _obscurePassword = !_obscurePassword;
-                    });
+                    obscurePassword.value = !obscurePassword.value;
                   },
                 ),
-                obscurePassword: _obscurePassword,
+                obscurePassword: obscurePassword.value,
               ),
               const SizedBox(height: 8.0),
               const Text(
@@ -118,7 +119,6 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
                 ),
               ),
               const SizedBox(height: 24.0),
-             
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
