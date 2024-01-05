@@ -1,96 +1,103 @@
+import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/constants/constant.dart';
 import 'package:construction_app/src/features/authentication/presentation/widgets/custom_textfield.dart';
 import 'package:construction_app/src/routing/routing.dart';
+import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 
-class SignupFirstScreen extends StatefulHookWidget {
-  const SignupFirstScreen({Key? key}) : super(key: key);
+class SignupFirstScreen extends HookWidget {
+  const SignupFirstScreen({super.key});
 
-  @override
-  _SignupFirstScreenState createState() => _SignupFirstScreenState();
-}
-
-class _SignupFirstScreenState extends State<SignupFirstScreen> {
-  bool _obscurePassword = true;
-
-  @override
   @override
   Widget build(BuildContext context) {
+    final obscurePassword = useState(true);
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
     final firstNameController = useTextEditingController();
     final lastNameController = useTextEditingController();
-    final obscurePassword = useState(true);
+   
 
     return Scaffold(
+      backgroundColor: AppColors.secondary,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 70),
+              SizedBox(
+                height: AppSizer.getHeight(context, 70.0),
+              ),
               const Center(
                 child: Text(
                   companyName,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: AppColors.secondaryText,
                     fontSize: 40,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w700,
-                    height: 0,
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
-              const Column(
+              SizedBox(
+                height: AppSizer.getHeight(context, 30.0),
+              ),
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Neues Konto',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: AppColors.secondaryText,
                       fontSize: 26,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
-                      height: 0,
                     ),
                   ),
-                  SizedBox(height: 8),
-                  Text(
+                  SizedBox(
+                    height: AppSizer.getHeight(context, 8.0),
+                  ),
+                  const Text(
                     'Geben Sie die erforderlichen Details ein',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: AppColors.secondaryText,
                       fontSize: 16,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
-                      height: 0,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
+              SizedBox(
+                height: AppSizer.getHeight(context, 24.0),
+              ),
               CustomTextField(
                 controller: firstNameController,
                 label: 'Vorname',
                 obscurePassword: false,
               ),
-              const SizedBox(height: 10),
+              SizedBox(
+                height: AppSizer.getHeight(context, 10.0),
+              ),
               CustomTextField(
                 controller: lastNameController,
                 label: 'Nachname',
                 obscurePassword: false,
               ),
-              const SizedBox(height: 10),
+              SizedBox(
+                height: AppSizer.getHeight(context, 10.0),
+              ),
               CustomTextField(
                 controller: emailController,
                 label: 'Email',
                 prefixIcon: const Icon(Icons.email_outlined),
                 obscurePassword: false,
               ),
-              const SizedBox(height: 10.0),
+              SizedBox(
+                height: AppSizer.getHeight(context, 10.0),
+              ),
               CustomTextField(
                 controller: passwordController,
                 label: 'Passwort',
@@ -107,18 +114,21 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
                 ),
                 obscurePassword: obscurePassword.value,
               ),
-              const SizedBox(height: 8.0),
+              SizedBox(
+                height: AppSizer.getHeight(context, 8.0),
+              ),
               const Text(
                 'Passwort muss aus mindestens 8 Zeichen \nbestehen',
                 style: TextStyle(
-                  color: Color(0xFF041675),
+                  color: AppColors.primary,
                   fontSize: 14,
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w500,
-                  height: 0,
                 ),
               ),
-              const SizedBox(height: 24.0),
+              SizedBox(
+                height: AppSizer.getHeight(context, 8.0),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -129,11 +139,10 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
                     child: const Text(
                       'Nächste',
                       style: TextStyle(
-                        color: Color(0xFF041675),
+                        color: AppColors.primary,
                         fontSize: 18,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w700,
-                        height: 0,
                       ),
                     ),
                   ),

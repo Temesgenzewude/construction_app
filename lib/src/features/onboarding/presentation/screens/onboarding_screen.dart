@@ -1,6 +1,8 @@
+import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/onboarding/presentation/widgets/custom_button.dart';
 import 'package:construction_app/src/features/onboarding/presentation/widgets/onboarding_card.dart';
 import 'package:construction_app/src/routing/routing.dart';
+import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -32,13 +34,13 @@ class OnboardingScreen extends HookWidget {
     final pageController = usePageController();
 
     return Scaffold(
-      backgroundColor: const Color(0xFF041675),
+      backgroundColor: AppColors.primary,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 430,
+            height: AppSizer.getHeight(context, 500.0),
             child: Container(
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -74,7 +76,7 @@ class OnboardingScreen extends HookWidget {
                           effect: const WormEffect(
                             dotWidth: 10,
                             dotHeight: 10,
-                            activeDotColor: Colors.white,
+                            activeDotColor: AppColors.secondary,
                             dotColor: Colors.grey,
                           ),
                         ),
@@ -82,24 +84,23 @@ class OnboardingScreen extends HookWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: AppSizer.getHeight(context, 24.0)),
                 CustomButton(
                   routeName: AppRoutes.AuthScreen.name,
                   buttonName: 'Weitermachen',
                   topbottom: 15,
                   leftright: 80,
-                  buttonColor: Colors.white,
-                  textColor: const Color(0xFF041675),
+                  buttonColor: AppColors.secondary,
+                  textColor: AppColors.primary,
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: AppSizer.getHeight(context, 24.0)),
                 const Text(
                   'überspringen',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.secondary,
                     fontSize: 20,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w700,
-                    height: 0,
                   ),
                 ),
               ],

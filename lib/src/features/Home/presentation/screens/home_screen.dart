@@ -30,7 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
-        flexibleSpace: const HomeAppBarWidget(),
+        flexibleSpace: Padding(
+          padding: EdgeInsets.only(top: AppSizer.getHeight(context, 45)),
+          child: const HomeAppBarWidget(),
+        ),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),

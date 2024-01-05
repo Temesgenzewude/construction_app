@@ -24,7 +24,7 @@ class CustomButton extends HookWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.go('/$routeName'); // Navigate to the provided route
+        context.goNamed(routeName); // Navigate to the provided route
       },
       borderRadius: BorderRadius.circular(8),
       child: Container(
