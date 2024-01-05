@@ -71,8 +71,8 @@ class CountryPhoneCodeInput extends HookWidget {
                   const Icon(Icons.arrow_drop_down),
                 ],
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width *0.35,
+               SizedBox(width: MediaQuery.of(context).size.width *0.18),
+              Expanded(
                 child: TextFormField(
                   controller: phoneNumberController,
                   keyboardType: TextInputType.phone,

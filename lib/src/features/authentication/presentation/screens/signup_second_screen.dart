@@ -98,7 +98,6 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
                       fontSize: 26,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
-                      height: 0,
                     ),
                   ),
                   SizedBox(height: 8),
@@ -116,7 +115,7 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
               ),
               const SizedBox(height: 24),
 
-              //! Company SELECTION
+              //! COMPANY SELECTION
               DropDownSelection(
                 companies: companies,
                 companyState: companyState,
@@ -134,7 +133,7 @@ class _SignupSecondScreenState extends State<SignupSecondScreen> {
               
               const SizedBox(height: 10),
 
-              //! employee employee SELECTION
+              //! EMPLOYEE SELECTION
               DropDownSelection(
                 companies: employee,
                 companyState: employeeState,
