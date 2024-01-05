@@ -59,11 +59,14 @@ class _SampleProjectScreenState extends State<SampleProjectScreen> {
           ),
           child: Column(
             children: [
-              Image.asset(
-                'assets/images/building.jpg',
-                height: 261,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  'assets/images/building_2.png',
+                  height: 261,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
               SettingTile(
                 text: 'Projektstatistik',
@@ -183,6 +186,9 @@ class _SampleProjectScreenState extends State<SampleProjectScreen> {
                   suffixText: 'Bauradar AG',
                 ),
               ),
+              SizedBox(
+                height: AppSizer.getHeight(context, 40),
+              ),
               Button(
                 backgroundColor: AppColors.primary,
                 textColor: Colors.white,
@@ -199,5 +205,3 @@ class _SampleProjectScreenState extends State<SampleProjectScreen> {
     );
   }
 }
-
-

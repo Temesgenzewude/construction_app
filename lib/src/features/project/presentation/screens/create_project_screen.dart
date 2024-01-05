@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:construction_app/src/common_widgets/button.dart';
 import 'package:construction_app/src/common_widgets/custom_text_field.dart';
 import 'package:construction_app/src/constants/colors.dart';
-import 'package:construction_app/src/features/project/presentation/widgets/plus_icon_button.dart';
+import 'package:construction_app/src/common_widgets/plus_icon_button.dart';
 import 'package:construction_app/src/features/project/presentation/widgets/text_field_label.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:construction_app/src/utils/country_code_to_flag.dart';
@@ -52,28 +52,28 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
     } on PlatformException {}
   }
 
-  final TextEditingController _projectNameEditingController =
-      useTextEditingController();
-  final TextEditingController _countryEditingController =
-      useTextEditingController();
-  final TextEditingController _projectNumberEditingController =
-      useTextEditingController();
-  final TextEditingController _projectStartDateEditingController =
-      useTextEditingController();
-  final TextEditingController _projectEndDateEditingController =
-      useTextEditingController();
-  final TextEditingController _descriptionEditingController =
-      useTextEditingController();
-  final TextEditingController _websiteEditingController =
-      useTextEditingController();
-  final TextEditingController _streatEditingController =
-      useTextEditingController();
-  final TextEditingController _postalCodeEditingController =
-      useTextEditingController();
-  final TextEditingController _cityCodeEditingController =
-      useTextEditingController();
   @override
   Widget build(BuildContext context) {
+    final TextEditingController projectNameEditingController =
+        useTextEditingController();
+    final TextEditingController countryEditingController =
+        useTextEditingController();
+    final TextEditingController projectNumberEditingController =
+        useTextEditingController();
+    final TextEditingController projectStartDateEditingController =
+        useTextEditingController();
+    final TextEditingController projectEndDateEditingController =
+        useTextEditingController();
+    final TextEditingController descriptionEditingController =
+        useTextEditingController();
+    final TextEditingController websiteEditingController =
+        useTextEditingController();
+    final TextEditingController streatEditingController =
+        useTextEditingController();
+    final TextEditingController postalCodeEditingController =
+        useTextEditingController();
+    final TextEditingController cityCodeEditingController =
+        useTextEditingController();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -148,7 +148,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'Projekbbild',
               ),
               CustomTextField(
-                textEditingController: _projectNameEditingController,
+                textEditingController: projectNameEditingController,
                 hintText: 'Projektname eingeben',
                 isDatePicker: false,
               ),
@@ -162,7 +162,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'Projektnummer',
               ),
               CustomTextField(
-                textEditingController: _projectNumberEditingController,
+                textEditingController: projectNumberEditingController,
                 hintText: 'Projektnummer Eingeben',
                 isDatePicker: false,
               ),
@@ -176,7 +176,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'Projektstart',
               ),
               CustomTextField(
-                textEditingController: _projectStartDateEditingController,
+                textEditingController: projectStartDateEditingController,
                 hintText: 'Datum eingeben',
                 isDatePicker: true,
               ),
@@ -190,7 +190,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'Projektende',
               ),
               CustomTextField(
-                textEditingController: _projectEndDateEditingController,
+                textEditingController: projectEndDateEditingController,
                 hintText: 'Datum eingeben',
                 isDatePicker: true,
               ),
@@ -204,7 +204,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'Beschreibung',
               ),
               CustomTextField(
-                textEditingController: _descriptionEditingController,
+                textEditingController: descriptionEditingController,
                 hintText: 'Beschreibung eingeben',
                 isDatePicker: false,
               ),
@@ -218,7 +218,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'Projekt-Website',
               ),
               CustomTextField(
-                textEditingController: _websiteEditingController,
+                textEditingController: websiteEditingController,
                 hintText: 'Projekt-Website eingeben',
                 isDatePicker: false,
               ),
@@ -232,7 +232,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'StraBe',
               ),
               CustomTextField(
-                textEditingController: _streatEditingController,
+                textEditingController: streatEditingController,
                 hintText: 'StraBe eingeben',
                 isDatePicker: false,
               ),
@@ -246,7 +246,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'PLZ',
               ),
               CustomTextField(
-                textEditingController: _postalCodeEditingController,
+                textEditingController: postalCodeEditingController,
                 hintText: 'PLZ eingeben',
                 isDatePicker: false,
               ),
@@ -260,7 +260,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 labelText: 'Stadt',
               ),
               CustomTextField(
-                textEditingController: _cityCodeEditingController,
+                textEditingController: cityCodeEditingController,
                 hintText: 'Stadt eingeben',
                 isDatePicker: false,
               ),
@@ -297,7 +297,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 ),
                 width: double.infinity,
                 child: TextField(
-                  controller: _countryEditingController,
+                  controller: countryEditingController,
                   decoration: InputDecoration(
                     prefixIcon: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -344,7 +344,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                               country.displayNameNoCountryCode.split(' ')[0];
                           countryFlag = country.flagEmoji;
                         });
-                        _countryEditingController.text = '';
+                        countryEditingController.text = '';
                       },
                       countryListTheme: CountryListThemeData(
                         margin: const EdgeInsets.all(15),
@@ -375,10 +375,10 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                   18,
                 ),
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Benutzerdefiniertes Feld Hinzufugen',
                     style: TextStyle(
                       color: Colors.black,
@@ -387,7 +387,9 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  PlusIconbutton(),
+                  PlusIconbutton(
+                    onTap: () {},
+                  ),
                 ],
               ),
               SizedBox(
