@@ -6,6 +6,7 @@ import 'package:construction_app/src/features/authentication/presentation/screen
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
+import 'package:construction_app/src/features/projects/screens/document_screen.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -67,6 +68,12 @@ class _MainRouterState extends State<MainRouter> {
           name: AppRoutes.PremiumPlanScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
               context, state,  const PremiumPlanScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.DocumentScreen.name}',
+          name: AppRoutes.DocumentScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state,   DocumentScreen()),
         ),
       ],
     );

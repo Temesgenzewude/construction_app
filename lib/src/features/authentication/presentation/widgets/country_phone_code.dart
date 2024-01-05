@@ -1,3 +1,4 @@
+import 'package:construction_app/src/constants/colors.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -22,7 +23,7 @@ class CountryPhoneCodeInput extends HookWidget {
         const Text(
           'Telefon:',
           style: TextStyle(
-            color: Colors.black,
+            color: AppColors.secondaryText,
             fontSize: 16,
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w600,
@@ -31,22 +32,22 @@ class CountryPhoneCodeInput extends HookWidget {
         ),
         const SizedBox(height: 2),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
+          padding: const EdgeInsets.symmetric(horizontal: 11),
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
-            color: Colors.white,
+            color: AppColors.secondary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
             shadows: const [
               BoxShadow(
-                color: Color(0x3F000000),
+                color: AppColors.secondary,
                 blurRadius: 2,
                 offset: Offset(1, 1),
                 spreadRadius: 0,
               ),
               BoxShadow(
-                color: Color(0x3F000000),
+                color: AppColors.secondary,
                 blurRadius: 2,
                 offset: Offset(-1, -1),
                 spreadRadius: 0,
@@ -71,7 +72,7 @@ class CountryPhoneCodeInput extends HookWidget {
                   const Icon(Icons.arrow_drop_down),
                 ],
               ),
-               SizedBox(width: MediaQuery.of(context).size.width *0.18),
+              SizedBox(width: MediaQuery.of(context).size.width * 0.18),
               Expanded(
                 child: TextFormField(
                   controller: phoneNumberController,
@@ -80,6 +81,7 @@ class CountryPhoneCodeInput extends HookWidget {
                     border: InputBorder.none,
                     hintText: '8559-5938-004',
                   ),
+                  textAlign: TextAlign.end,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter a phone number';
