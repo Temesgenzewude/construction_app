@@ -43,25 +43,25 @@ class HelpScreen extends StatelessWidget {
             SizedBox(
               height: AppSizer.getHeight(context, 14),
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.report_gmailerrorred_outlined,
               ),
               text: 'Fehler melden',
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.mail_outline,
               ),
               text: 'Fultion anfragen',
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.help_outline,
               ),
               text: 'Frage stellen',
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.tv,
               ),
@@ -76,7 +76,7 @@ class HelpScreen extends StatelessWidget {
             SizedBox(
               height: AppSizer.getHeight(context, 14),
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.widgets_outlined,
               ),
@@ -95,19 +95,19 @@ class HelpScreen extends StatelessWidget {
             SizedBox(
               height: AppSizer.getHeight(context, 14),
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.storage,
               ),
               text: 'Cache Ioschen',
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.file_download_outlined,
               ),
               text: 'Downloads erzwingen',
             ),
-            SettingTile(
+            HelpSettingTile(
               icon: const Icon(
                 Icons.file_upload_outlined,
               ),
