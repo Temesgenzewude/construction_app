@@ -6,7 +6,7 @@ import 'package:construction_app/src/features/authentication/presentation/screen
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
-import 'package:construction_app/src/features/projects/screens/document_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/document_screen.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
