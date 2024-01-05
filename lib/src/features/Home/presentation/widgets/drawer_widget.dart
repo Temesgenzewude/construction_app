@@ -1,4 +1,5 @@
 import 'package:construction_app/src/features/Home/presentation/widgets/drawer_setting.dart';
+import 'package:construction_app/src/features/help/presentation/screens/help_screen.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 
@@ -7,53 +8,59 @@ class DrawerWidget extends StatelessWidget {
     super.key,
   });
 
-  final List settings = [
-    [
-      const Icon(
-        Icons.person_outline,
-      ),
-      'Mein Konto',
-      () {}
-    ],
-    [
-      const Icon(
-        Icons.notifications_none,
-      ),
-      'Benachrichtigung',
-      () {}
-    ],
-    [
-      const Icon(
-        Icons.help_outline,
-      ),
-      'Unterstützung',
-      () {}
-    ],
-    [
-      const Icon(
-        Icons.settings,
-      ),
-      'Einstellungen',
-      () {}
-    ],
-    [
-      const Icon(
-        Icons.book,
-      ),
-      'Datenschutzrichtlinie',
-      () {}
-    ],
-    [
-      const Icon(
-        Icons.logout,
-      ),
-      'Datenschutzrichtlinie',
-      () {}
-    ],
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final List settings = [
+      [
+        const Icon(
+          Icons.person_outline,
+        ),
+        'Mein Konto',
+        () {}
+      ],
+      [
+        const Icon(
+          Icons.notifications_none,
+        ),
+        'Benachrichtigung',
+        () {}
+      ],
+      [
+        const Icon(
+          Icons.help_outline,
+        ),
+        'Unterstützung',
+        () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HelpScreen(),
+            ),
+          );
+        }
+      ],
+      [
+        const Icon(
+          Icons.settings,
+        ),
+        'Einstellungen',
+        () {}
+      ],
+      [
+        const Icon(
+          Icons.book,
+        ),
+        'Datenschutzrichtlinie',
+        () {}
+      ],
+      [
+        const Icon(
+          Icons.logout,
+        ),
+        'Datenschutzrichtlinie',
+        () {}
+      ],
+    ];
     return Drawer(
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -70,7 +77,6 @@ class DrawerWidget extends StatelessWidget {
               top: AppSizer.getHeight(context, 50),
             ),
             child: ClipRRect(
-              
               borderRadius: BorderRadius.circular(100),
               child: Image.asset(
                 'assets/images/profile_image.jpg',
