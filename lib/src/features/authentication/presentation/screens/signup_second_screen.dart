@@ -125,7 +125,7 @@ class SignupSecondScreen extends HookWidget {
                 hintText: 'Unternehmenstyp',
               ),
               SizedBox(
-                height: AppSizer.getHeight(context, 10.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
 
               //! COUNTRY CODE SELECTION
@@ -136,7 +136,7 @@ class SignupSecondScreen extends HookWidget {
               ),
 
               SizedBox(
-                height: AppSizer.getHeight(context, 10.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
 
               //! EMPLOYEE SELECTION

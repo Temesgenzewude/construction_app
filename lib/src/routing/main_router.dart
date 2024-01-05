@@ -33,7 +33,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.ProjectReportScreen.name}',
+      initialLocation: '/${AppRoutes.SplashScreen.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.SplashScreen.name}',

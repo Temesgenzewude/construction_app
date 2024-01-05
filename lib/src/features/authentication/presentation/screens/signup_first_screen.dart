@@ -78,7 +78,7 @@ class SignupFirstScreen extends HookWidget {
                 obscurePassword: false,
               ),
               SizedBox(
-                height: AppSizer.getHeight(context, 10.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
               CustomTextField(
                 controller: lastNameController,
@@ -86,7 +86,7 @@ class SignupFirstScreen extends HookWidget {
                 obscurePassword: false,
               ),
               SizedBox(
-                height: AppSizer.getHeight(context, 10.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
               CustomTextField(
                 controller: emailController,
@@ -95,7 +95,7 @@ class SignupFirstScreen extends HookWidget {
                 obscurePassword: false,
               ),
               SizedBox(
-                height: AppSizer.getHeight(context, 10.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
               CustomTextField(
                 controller: passwordController,
