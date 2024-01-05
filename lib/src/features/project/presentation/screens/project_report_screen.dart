@@ -1,9 +1,11 @@
+import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/project/presentation/widgets/document_card.dart';
+import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-class DocumentScreen extends HookWidget {
-  DocumentScreen({super.key});
+class ProjectReportScreen extends HookWidget {
+  ProjectReportScreen({super.key});
   final List<Map<String, dynamic>> items = [
     {
       "name": 'Item 1',
@@ -22,13 +24,14 @@ class DocumentScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.secondary,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 30),
+              SizedBox(height: AppSizer.getHeight(context, 30)),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -46,7 +49,7 @@ class DocumentScreen extends HookWidget {
                   Icon(Icons.more_horiz),
                 ],
               ),
-              const SizedBox(height: 15),
+              SizedBox(height: AppSizer.getHeight(context, 20)),
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 9),
@@ -88,7 +91,7 @@ class DocumentScreen extends HookWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 15),
+              SizedBox(height: AppSizer.getHeight(context, 20)),
               const Text(
                 'Alle Dateien (2)',
                 style: TextStyle(
@@ -99,7 +102,7 @@ class DocumentScreen extends HookWidget {
                   height: 0,
                 ),
               ),
-              const SizedBox(height: 15),
+              SizedBox(height: AppSizer.getHeight(context, 15)),
               Container(
                 clipBehavior: Clip.antiAlias,
                 decoration: ShapeDecoration(
@@ -124,7 +127,11 @@ class DocumentScreen extends HookWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      left: 20.0, right: 30, bottom: 80, top: 20),
+                    left: 20.0,
+                    right: 30,
+                    bottom: 80,
+                    top: 20,
+                  ),
                   child: Column(
                     children: [
                       ListView.builder(
@@ -139,11 +146,26 @@ class DocumentScreen extends HookWidget {
                   ),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  // Add functionality for the ElevatedButton here
-                },
-                child: Icon(Icons.add),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RawMaterialButton(
+                    onPressed: () {},
+                    shape: const CircleBorder(),
+                    fillColor: AppColors.primary,
+                    constraints: BoxConstraints(
+                      minWidth: AppSizer.getWidth(context, 60),
+                      minHeight: AppSizer.getHeight(context, 60),
+                    ),
+                    elevation: 0,
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 52,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

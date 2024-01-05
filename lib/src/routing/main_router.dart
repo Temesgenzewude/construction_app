@@ -6,7 +6,7 @@ import 'package:construction_app/src/features/authentication/presentation/screen
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
-import 'package:construction_app/src/features/project/presentation/screens/document_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/project_report_screen.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,7 +25,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.SplashScreen.name}',
+      initialLocation: '/${AppRoutes.ProjectReportScreen.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.SplashScreen.name}',
@@ -70,10 +70,10 @@ class _MainRouterState extends State<MainRouter> {
               context, state,  const PremiumPlanScreen()),
         ),
         GoRoute(
-          path: '/${AppRoutes.DocumentScreen.name}',
-          name: AppRoutes.DocumentScreen.name,
+          path: '/${AppRoutes.ProjectReportScreen.name}',
+          name: AppRoutes.ProjectReportScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state,   DocumentScreen()),
+              context, state,   ProjectReportScreen()),
         ),
       ],
     );

@@ -9,5 +9,5 @@ enum AppRoutes {
   SignupFirstScreen,
   SignupSecondScreen,
   PremiumPlanScreen,
-  DocumentScreen
+  ProjectReportScreen
 }
