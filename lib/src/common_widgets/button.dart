@@ -12,10 +12,10 @@ class Button extends StatelessWidget {
     required this.width,
   });
 
-  String title;
-  Color textColor;
-  Color backgroundColor;
-  double width;
+  final String title;
+  final Color textColor;
+  final Color backgroundColor;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
