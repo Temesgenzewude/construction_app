@@ -8,6 +8,7 @@ import 'package:construction_app/src/features/help/presentation/screens/help_scr
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/daily_report_screen.dart';
 
 import 'package:construction_app/src/features/project/presentation/screens/project_report_screen.dart';
 
@@ -115,6 +116,12 @@ class _MainRouterState extends State<MainRouter> {
           name: AppRoutes.ProjectReportScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
               context, state, ProjectReportScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.DailyReportScreen.name}',
+          name: AppRoutes.DailyReportScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state,  const DailyReportScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.DocumentsScreen.name}',
