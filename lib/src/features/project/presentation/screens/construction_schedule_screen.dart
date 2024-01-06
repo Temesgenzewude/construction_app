@@ -1,5 +1,7 @@
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ConstructionScheduleScreen extends StatelessWidget {
   const ConstructionScheduleScreen({super.key});
@@ -47,6 +49,8 @@ class ConstructionScheduleScreen extends StatelessWidget {
                     completeStatus: '0',
                     startDate: '04.09.2023',
                     endDate: '02.10.2023',
+                    onTap: () =>
+                        context.go('/${AppRoutes.ConstructionPlanScreen.name}'),
                   ),
                   SizedBox(
                     height: AppSizer.getHeight(
@@ -71,11 +75,13 @@ class ScheduleCardWidget extends StatelessWidget {
     required this.completeStatus,
     required this.endDate,
     required this.startDate,
+    this.onTap,
   });
   String title;
   String completeStatus;
   String startDate;
   String endDate;
+  Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +157,7 @@ class ScheduleCardWidget extends StatelessWidget {
                 ],
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: onTap,
                 icon: const Icon(
                   Icons.navigate_next_outlined,
                 ),
