@@ -77,11 +77,11 @@ class ScheduleCardWidget extends StatelessWidget {
     required this.startDate,
     this.onTap,
   });
-  String title;
-  String completeStatus;
-  String startDate;
-  String endDate;
-  Function()? onTap;
+  final String title;
+  final String completeStatus;
+  final String startDate;
+  final String endDate;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {

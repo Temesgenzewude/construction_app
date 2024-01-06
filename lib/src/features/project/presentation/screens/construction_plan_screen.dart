@@ -146,8 +146,8 @@ class ConstructionPlanScreen extends HookWidget {
 }
 
 class DateTextField extends StatelessWidget {
-  DateTextField({super.key, required this.controller});
-  TextEditingController controller;
+  const DateTextField({super.key, required this.controller});
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
