@@ -135,33 +135,43 @@ class DailyReportScreen extends HookWidget {
                 runSpacing: AppSizer.getHeight(context, 10),
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-                  const Text(
-                    'Min',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
+                  Row(
+                    children: [
+                      const Text(
+                        'Min',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(width: AppSizer.getWidth(context, 27)),
+                      InputFieldContainer(
+                        controller: TextEditingController(),
+                        width: AppSizer.getWidth(context, 95),
+                        height: AppSizer.getHeight(context, 30),
+                      ),
+                    ],
                   ),
-                  InputFieldContainer(
-                    controller: TextEditingController(),
-                    width: AppSizer.getWidth(context, 95),
-                    height: AppSizer.getHeight(context, 30),
-                  ),
-                  const Text(
-                    'Max',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  InputFieldContainer(
-                    controller: TextEditingController(),
-                    width: AppSizer.getWidth(context, 95),
-                    height: AppSizer.getHeight(context, 30),
+                  Row(
+                    children: [
+                      const Text(
+                        'Max',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(width: AppSizer.getWidth(context, 27)),
+                      InputFieldContainer(
+                        controller: TextEditingController(),
+                        width: AppSizer.getWidth(context, 95),
+                        height: AppSizer.getHeight(context, 30),
+                      ),
+                    ],
                   ),
                 ],
               ),
