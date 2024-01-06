@@ -1,8 +1,7 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class DropDownSelection extends HookWidget {
+class DropDownSelection extends StatelessWidget {
   const DropDownSelection({
     super.key,
     required this.companies,
@@ -42,13 +41,13 @@ class DropDownSelection extends HookWidget {
             ),
             shadows: const [
               BoxShadow(
-                color: Color(0x3F000000),
+                color:Color(0x3F000000),
                 blurRadius: 2,
                 offset: Offset(1, 1),
                 spreadRadius: 0,
               ),
               BoxShadow(
-                color: Color(0x3F000000),
+                color:Color(0x3F000000),
                 blurRadius: 2,
                 offset: Offset(-1, -1),
                 spreadRadius: 0,

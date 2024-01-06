@@ -5,12 +5,16 @@ import 'package:construction_app/src/features/authentication/presentation/screen
 import 'package:construction_app/src/features/authentication/presentation/screens/signup_first_screen.dart';
 import 'package:construction_app/src/features/authentication/presentation/screens/signup_second_screen.dart';
 import 'package:construction_app/src/features/dashboard/presentation/screens/dashboard.dart';
+import 'package:construction_app/src/features/groups/presentation/screens/add_group_screen.dart';
+import 'package:construction_app/src/features/groups/presentation/screens/groups_screen.dart';
 import 'package:construction_app/src/features/help/presentation/screens/help_screen.dart';
+import 'package:construction_app/src/features/notification/presentation/screen/notification_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/mangel_bearbeiten_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/mangel_screen.dart';
+import 'package:construction_app/src/features/profile/presentation/screen/profile_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/daily_report_screen.dart';
 
 import 'package:construction_app/src/features/project/presentation/screens/project_report_screen.dart';
@@ -40,7 +44,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.SplashScreen.name}',
+      initialLocation: '/${AppRoutes.NotificationScreen.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.SplashScreen.name}',
@@ -175,6 +179,42 @@ class _MainRouterState extends State<MainRouter> {
             context,
             state,
             const MangelBearbeitenScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.ProfileScreen.name}',
+          name: AppRoutes.ProfileScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            const ProfileScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.NotificationScreen.name}',
+          name: AppRoutes.NotificationScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            NotificationScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.GroupsScreen.name}',
+          name: AppRoutes.GroupsScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            GroupsScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.AddGroupScreen.name}',
+          name: AppRoutes.AddGroupScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            AddGroupScreen(),
           ),
         ),
       ],

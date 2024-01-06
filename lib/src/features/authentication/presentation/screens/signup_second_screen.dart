@@ -53,7 +53,7 @@ class SignupSecondScreen extends HookWidget {
     final employeeState = useState("");
     final countryCodeState = useState("");
     final companyState = useState("");
-    final phoneNumberController = useTextEditingController();
+    TextEditingController phoneNumberController = useTextEditingController();
 
     return Scaffold(
       backgroundColor: AppColors.secondary,
@@ -70,7 +70,7 @@ class SignupSecondScreen extends HookWidget {
               IconButton(
                 icon: const Icon(Icons.arrow_back),
                 onPressed: () {
-                  context.pop();
+                  context.goNamed(AppRoutes.SignupFirstScreen.name);
                 },
               ),
               const Center(

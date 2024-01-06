@@ -1,7 +1,7 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/constants/constant.dart';
 import 'package:construction_app/src/features/authentication/presentation/widgets/custom_button.dart';
-import 'package:construction_app/src/features/authentication/presentation/widgets/custom_textfield.dart';
+import 'package:construction_app/src/features/authentication/presentation/widgets/custom_text_field.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
@@ -63,14 +63,14 @@ class LoginScreen extends HookWidget {
                 ],
               ),
               SizedBox(height: AppSizer.getHeight(context, 20.0)),
-              CustomTextField(
+              TextFieldWithlabel(
                 controller: emailController,
                 label: 'Email',
                 prefixIcon: const Icon(Icons.email_outlined),
                 obscurePassword: false,
               ),
               SizedBox(height: AppSizer.getHeight(context, 20.0)),
-              CustomTextField(
+              TextFieldWithlabel(
                 controller: passwordController,
                 label: 'Passwort',
                 prefixIcon: const Icon(Icons.lock_outline),
@@ -91,7 +91,7 @@ class LoginScreen extends HookWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   const Text(
-                    'Passwort ',
+                    'Sie haben noch kein Konto? ',
                     style: TextStyle(
                       color: AppColors.secondaryText,
                       fontSize: 16,
@@ -100,9 +100,11 @@ class LoginScreen extends HookWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.goNamed(AppRoutes.SignupFirstScreen.name);
+                    },
                     child: const Text(
-                      'vergessen?',
+                      'Registrieren',
                       style: TextStyle(
                         color: AppColors.primary,
                         fontSize: 16,
@@ -113,47 +115,14 @@ class LoginScreen extends HookWidget {
                   ),
                 ],
               ),
-              SizedBox(height: AppSizer.getHeight(context, 30.0)),
+              SizedBox(height: AppSizer.getHeight(context, 20.0)),
               CustomButton(
-                onTap: () {
-                  context.goNamed(AppRoutes.DashboardScreen.name);
-                },
+                onTap: () {},
                 buttonName: 'Anmeldung',
                 topbottom: 15,
                 leftright: 80,
                 buttonColor: AppColors.primary,
                 textColor: AppColors.secondary,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const Text(
-                      'Sie haben noch kein Konto? ',
-                      style: TextStyle(
-                        color: AppColors.secondaryText,
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        context.goNamed(AppRoutes.SignupFirstScreen.name);
-                      },
-                      child: const Text(
-                        'Registrieren',
-                        style: TextStyle(
-                          color: AppColors.primary,
-                          fontSize: 16,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
               ),
             ],
           ),
