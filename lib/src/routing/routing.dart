@@ -23,4 +23,7 @@ enum AppRoutes {
   ConstructionScheduleScreen,
   ConstructionPlanScreen,
   DashboardScreen,
+  MangelScreen,
+  MangelBearbeitenScreen,
+
 }
