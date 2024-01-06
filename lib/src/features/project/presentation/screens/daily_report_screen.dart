@@ -136,6 +136,7 @@ class DailyReportScreen extends HookWidget {
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
                         'Min',
@@ -155,6 +156,7 @@ class DailyReportScreen extends HookWidget {
                     ],
                   ),
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
                         'Max',
