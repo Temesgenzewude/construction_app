@@ -1,8 +1,7 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class CustomTextField extends HookWidget {
+class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     required this.controller,

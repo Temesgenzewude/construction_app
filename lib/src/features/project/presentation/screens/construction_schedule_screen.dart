@@ -49,8 +49,8 @@ class ConstructionScheduleScreen extends StatelessWidget {
                     completeStatus: '0',
                     startDate: '04.09.2023',
                     endDate: '02.10.2023',
-                    onTap: () =>
-                        context.go('/${AppRoutes.ConstructionPlanScreen.name}'),
+                    onTap: () => context
+                        .pushNamed(AppRoutes.ConstructionPlanScreen.name),
                   ),
                   SizedBox(
                     height: AppSizer.getHeight(
@@ -69,7 +69,7 @@ class ConstructionScheduleScreen extends StatelessWidget {
 }
 
 class ScheduleCardWidget extends StatelessWidget {
-  ScheduleCardWidget({
+  const ScheduleCardWidget({
     super.key,
     required this.title,
     required this.completeStatus,

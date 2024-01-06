@@ -1,32 +1,29 @@
 import 'package:construction_app/src/common_widgets/dots_widget.dart';
+import 'package:construction_app/src/common_widgets/plus_icon_button.dart';
 
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/app_bar.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/drawer_widget.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/project_card.dart';
+import 'package:construction_app/src/routing/routing.dart';
 
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends HookWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int selectedIndex = 0;
-  final PageController _controller = PageController();
-
-  onSlide(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final selectedIndex = useState(0);
+    final pageController = usePageController();
+
+    void onSlide(int index) {
+      selectedIndex.value = index;
+    }
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
@@ -37,106 +34,114 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: SizedBox(
-                height: AppSizer.getHeight(context, 194),
-                child: ListView.separated(
-                  controller: _controller,
+                height: 200,
+                width: double.infinity,
+                child: PageView.builder(
+                  onPageChanged: (index) {
+                    onSlide(index);
+                  },
+                  controller: pageController,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: ColorFiltered(
-                            colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(
-                                  0.3), // Color to be used for the filter
-                              BlendMode.darken, // Blend mode for the filter
-                            ),
-                            child: Image.asset(
-                              'assets/images/building.jpg',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: AppSizer.getWidth(context, 24),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 2),
-                                decoration: const BoxDecoration(
-                                  color: AppColors.primary,
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(4),
-                                    bottomRight: Radius.circular(4),
-                                  ),
+                    return Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  Colors.black.withOpacity(0.3),
+                                  BlendMode.darken,
                                 ),
-                                child: Text(
-                                  'E-Plaza warehouse',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: AppSizer.getHeight(context, 18),
-                                  ),
+                                child: Image.asset(
+                                  'assets/images/building.jpg',
+                                  fit: BoxFit.cover,
+                                  width: MediaQuery.of(context).size.width,
                                 ),
                               ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 2),
-                                decoration: const BoxDecoration(
-                                  color: AppColors.primary,
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(4),
-                                    bottomRight: Radius.circular(4),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Construction',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: AppSizer.getHeight(context, 18),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          bottom: AppSizer.getHeight(context, 18),
-                          left: AppSizer.getWidth(context, 6),
-                          child: const Text(
-                            'Construction Map',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
                             ),
-                          ),
+                            Positioned(
+                              top: AppSizer.getWidth(context, 24),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8, vertical: 2),
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.primary,
+                                      borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(4),
+                                        bottomRight: Radius.circular(4),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      'E-Plaza warehouse',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize:
+                                            AppSizer.getHeight(context, 18),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 2,
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8, vertical: 2),
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.primary,
+                                      borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(4),
+                                        bottomRight: Radius.circular(4),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      'Construction',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize:
+                                            AppSizer.getHeight(context, 18),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Positioned(
+                              bottom: AppSizer.getHeight(context, 18),
+                              left: AppSizer.getWidth(context, 6),
+                              child: const Text(
+                                'Construction Map',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: AppSizer.getHeight(context, 18),
+                              right: AppSizer.getWidth(context, 20),
+                              child: Icon(
+                                Icons.file_download_outlined,
+                                color: Colors.white,
+                                size: AppSizer.getWidth(context, 25),
+                              ),
+                            )
+                          ],
                         ),
-                        Positioned(
-                          bottom: AppSizer.getHeight(context, 18),
-                          right: AppSizer.getWidth(context, 20),
-                          child: Icon(
-                            Icons.file_download_outlined,
-                            color: Colors.white,
-                            size: AppSizer.getWidth(context, 25),
-                          ),
-                        )
-                      ],
+                      ),
                     );
-                  },
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(width: 10);
                   },
                   itemCount: 3,
                 ),
@@ -147,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Center(
               child: DotsWidget(
-                selectedIndex: 0,
+                selectedIndex: selectedIndex.value,
                 size: 20,
                 totalDots: 3,
               ),
@@ -160,12 +165,24 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Neues project',
-                    style: TextStyle(
-                      fontSize: AppSizer.getWidth(context, 18),
-                      fontWeight: FontWeight.w600,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Neues project',
+                        style: TextStyle(
+                          fontSize: AppSizer.getWidth(context, 18),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      PlusIconbutton(
+                        onTap: () {
+                          context.pushNamed(AppRoutes.CreateProjectScreen.name);
+                        },
+                      )
+                    ],
                   ),
                   Text(
                     'Erstellen Sie Ihr erstes Projekt, um \n Loszulegen',
@@ -208,14 +225,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Row(
                     children: [
-                      ProjectCard(
+                      const ProjectCard(
                         projectTitle: 'Eisenbahnbau',
                         imageUrl: 'assets/images/project_picture_1.png',
                       ),
                       SizedBox(
                         width: AppSizer.getWidth(context, 10),
                       ),
-                      ProjectCard(
+                      const ProjectCard(
                         projectTitle: 'Mall-Bau',
                         imageUrl: 'assets/images/project_picture_2.png',
                       ),

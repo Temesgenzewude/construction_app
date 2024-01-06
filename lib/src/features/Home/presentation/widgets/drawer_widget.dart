@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class DrawerWidget extends StatelessWidget {
-  DrawerWidget({
+  const DrawerWidget({
     super.key,
   });
 
@@ -32,7 +32,7 @@ class DrawerWidget extends StatelessWidget {
         ),
         'Unterstützung',
         () {
-          context.go('/${AppRoutes.HelpScreen.name}');
+          context.pushNamed(AppRoutes.HelpScreen.name);
         }
       ],
       [

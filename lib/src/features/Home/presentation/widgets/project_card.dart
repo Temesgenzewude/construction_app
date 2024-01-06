@@ -1,19 +1,17 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ProjectCard extends StatelessWidget {
-  ProjectCard({
+  const ProjectCard({
     super.key,
     required this.projectTitle,
     required this.imageUrl,
   });
 
-  String projectTitle;
-  String imageUrl;
+  final String projectTitle;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {

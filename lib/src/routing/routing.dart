@@ -13,13 +13,13 @@ enum AppRoutes {
   ProjectReportScreen,
 
   HomeScreen,
-  HelpScreen, 
-  CreateProjectScreen, 
-  ProjectsScreen, 
+  HelpScreen,
+  CreateProjectScreen,
+  ProjectsScreen,
   SampleProjectScreen,
   DailyReportScreen,
-  DocumentsScreen, 
+  DocumentsScreen,
+
   ConstructionScheduleScreen,
   ConstructionPlanScreen,
-
 }

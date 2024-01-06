@@ -1,12 +1,9 @@
-
-// ignore_for_file: unused_import, must_be_immutable
-
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class SelectedDot extends StatelessWidget {
-  SelectedDot({super.key, this.size});
-  double? size;
+  const SelectedDot({super.key, this.size});
+  final double? size;
   @override
   Widget build(BuildContext context) {
     return Padding(

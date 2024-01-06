@@ -17,7 +17,6 @@ class SignupFirstScreen extends HookWidget {
     final passwordController = useTextEditingController();
     final firstNameController = useTextEditingController();
     final lastNameController = useTextEditingController();
-   
 
     return Scaffold(
       backgroundColor: AppColors.secondary,
@@ -134,7 +133,7 @@ class SignupFirstScreen extends HookWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      context.go('/${AppRoutes.SignupSecondScreen.name}');
+                      context.pushNamed(AppRoutes.SignupSecondScreen.name);
                     },
                     child: const Text(
                       'Nächste',

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class CustomButton extends HookWidget {
+class CustomButton extends StatelessWidget {
   final String buttonName;
   final double topbottom;
   final double leftright;
