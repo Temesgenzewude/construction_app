@@ -1,10 +1,9 @@
-
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  Button({
+  const Button({
     super.key,
     required this.backgroundColor,
     required this.textColor,

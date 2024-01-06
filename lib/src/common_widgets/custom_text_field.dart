@@ -1,9 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({
+  const CustomTextField({
     super.key,
     required this.textEditingController,
     this.radius = 8,
@@ -12,15 +10,15 @@ class CustomTextField extends StatelessWidget {
   });
 
   final TextEditingController textEditingController;
-  double radius;
-  bool? isPassword;
-  bool isDatePicker;
-  String hintText;
+  final double radius;
+
+  final bool isDatePicker;
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 10,
         // vertical: 8,
       ),
