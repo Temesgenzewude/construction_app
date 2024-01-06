@@ -4,9 +4,8 @@ import 'package:construction_app/src/features/onboarding/presentation/widgets/cu
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class BeginScreen extends HookWidget {
+class BeginScreen extends StatelessWidget {
   const BeginScreen({super.key});
 
   @override
@@ -17,7 +16,7 @@ class BeginScreen extends HookWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-           Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
@@ -42,8 +41,8 @@ class BeginScreen extends HookWidget {
                   left: -620,
                   top: 20,
                   child: Container(
-                    width: AppSizer.getWidth(context, 1500.0) ,
-                    height:  AppSizer.getHeight(context, 1060.0) ,
+                    width: AppSizer.getWidth(context, 1500.0),
+                    height: AppSizer.getHeight(context, 1060.0),
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/company.png"),
@@ -66,7 +65,7 @@ class BeginScreen extends HookWidget {
                           buttonColor: AppColors.primary,
                           textColor: AppColors.secondary,
                         ),
-                         SizedBox(height: AppSizer.getHeight(context, 24.0)),
+                        SizedBox(height: AppSizer.getHeight(context, 24.0)),
                         CustomButton(
                           routeName: AppRoutes.LoginScreen.name,
                           buttonName: 'Anmeldung',

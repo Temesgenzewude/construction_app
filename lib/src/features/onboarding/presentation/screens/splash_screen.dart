@@ -4,9 +4,8 @@ import 'package:construction_app/src/features/onboarding/presentation/widgets/cu
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class SplashScreen extends HookWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
