@@ -1,23 +1,30 @@
 import 'package:construction_app/src/constants/colors.dart';
-import 'package:construction_app/src/features/project/presentation/widgets/document_card.dart';
+import 'package:construction_app/src/features/project/presentation/widgets/add_button.dart';
+import 'package:construction_app/src/features/project/presentation/widgets/project_report_card.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class ProjectReportScreen extends HookWidget {
+
+class ProjectReportScreen extends StatelessWidget {
   ProjectReportScreen({super.key});
   final List<Map<String, dynamic>> items = [
     {
-      "name": 'Item 1',
-      "time": "Erstellt am 4.9.2023, 10:45:11",
+      "name": '2022-03-01 Bautagesbericht',
+      "time": "01.03.2023",
+      "report": "Bautagesbericht",
+      "title": "Bent Campen",
     },
     {
-      "name": 'Item 2',
-      "time": "Erstellt am 4.9.2023, 10:45:11",
+      "name": '2022-03-01 Bautagesbericht',
+      "time": "01.03.2023",
+      "report": "Bautagesbericht",
+      "title": "Bent Campen",
     },
     {
-      "name": 'Item 3',
-      "time": "Erstellt am 4.9.2023, 10:45:11",
+      "name": '2022-03-01 Bautagesbericht',
+      "time": "01.03.2023",
+      "report": "Bautagesbericht",
+      "title": "Bent Campen",
     },
   ];
 
@@ -27,7 +34,7 @@ class ProjectReportScreen extends HookWidget {
       backgroundColor: AppColors.secondary,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -37,22 +44,20 @@ class ProjectReportScreen extends HookWidget {
                 children: [
                   Icon(Icons.arrow_back),
                   Text(
-                    'Dokumente',
+                    'Projektberichte',
                     style: TextStyle(
-                      color: Color(0xFF041675),
+                      color: AppColors.primary,
                       fontSize: 16,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
-                      height: 0,
                     ),
                   ),
                   Icon(Icons.more_horiz),
                 ],
               ),
-              SizedBox(height: AppSizer.getHeight(context, 20)),
+              SizedBox(height: AppSizer.getHeight(context, 25)),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 9),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 clipBehavior: Clip.antiAlias,
                 decoration: ShapeDecoration(
                   color: Colors.white,
@@ -74,98 +79,58 @@ class ProjectReportScreen extends HookWidget {
                     )
                   ],
                 ),
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(Icons.search),
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Search', // Hint text aligned to the right
-                          hintStyle: TextStyle(),
-                          border: InputBorder.none,
-                        ),
-                        textAlign: TextAlign.end,
-                      ),
+                child: const Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search),
+                      hintText: 'Suchen',
+                      hintStyle: TextStyle(),
+                      border: InputBorder.none,
                     ),
-                  ],
+                    textAlign: TextAlign.end,
+                  ),
                 ),
               ),
               SizedBox(height: AppSizer.getHeight(context, 20)),
-              const Text(
-                'Alle Dateien (2)',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 12,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w600,
-                  height: 0,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Emtwurf',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 10,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Text(
+                    '${items.length} Element',
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 10,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  )
+                ],
               ),
-              SizedBox(height: AppSizer.getHeight(context, 15)),
-              Container(
-                clipBehavior: Clip.antiAlias,
-                decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  shadows: const [
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 2,
-                      offset: Offset(1, 1),
-                      spreadRadius: 0,
-                    ),
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 2,
-                      offset: Offset(-1, -1),
-                      spreadRadius: 0,
-                    )
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20.0,
-                    right: 30,
-                    bottom: 80,
-                    top: 20,
-                  ),
-                  child: Column(
-                    children: [
-                      ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: items.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          final doc = items[index];
-                          return DocumentCard(doc: doc);
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+              ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                padding: const EdgeInsets.only(top: 12),
+                shrinkWrap: true,
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final doc = items[index];
+                  return ProjectReportCard(doc: doc);
+                },
               ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: RawMaterialButton(
-                    onPressed: () {},
-                    shape: const CircleBorder(),
-                    fillColor: AppColors.primary,
-                    constraints: BoxConstraints(
-                      minWidth: AppSizer.getWidth(context, 60),
-                      minHeight: AppSizer.getHeight(context, 60),
-                    ),
-                    elevation: 0,
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 52,
-                    ),
-                  ),
-                ),
+              SizedBox(height: AppSizer.getHeight(context, 180)),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  AddButton(),
+                ],
               ),
             ],
           ),
