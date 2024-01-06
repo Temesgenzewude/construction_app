@@ -1,28 +1,26 @@
+import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+class FixedTextFieldWidget extends StatelessWidget {
+  const FixedTextFieldWidget({
     super.key,
-    required this.textEditingController,
-    this.radius = 8,
-    required this.isDatePicker,
-    required this.hintText,
+    required this.controller,
     this.maxLines = 1,
   });
 
-  final TextEditingController textEditingController;
-  final double radius;
-
-  final bool isDatePicker;
-  final String hintText;
+  final TextEditingController controller;
   final int maxLines;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 10,
+        horizontal: 5,
         // vertical: 8,
+      ),
+      width: AppSizer.getWidth(
+        context,
+        166,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
@@ -42,10 +40,8 @@ class CustomTextField extends StatelessWidget {
           )
         ],
       ),
-      width: double.infinity,
       child: TextField(
         decoration: InputDecoration(
-          hintText: hintText,
           hintStyle: TextStyle(
             color: Colors.black.withOpacity(0.7200000286102295),
             fontSize: 12,
@@ -54,22 +50,8 @@ class CustomTextField extends StatelessWidget {
             height: 0,
           ),
           border: InputBorder.none,
-          suffixIcon: isDatePicker
-              ? const Icon(
-                  Icons.date_range,
-                  size: 20,
-                )
-              : null,
           isDense: true,
         ),
-        readOnly: isDatePicker,
-        onTap: isDatePicker
-            ? () => selectedDate(
-                  context,
-                  DateTime(2020),
-                  DateTime(2030),
-                )
-            : null,
         style: TextStyle(
           fontSize: 12,
           color: Colors.black.withOpacity(0.7200000286102295),
@@ -77,23 +59,10 @@ class CustomTextField extends StatelessWidget {
           fontWeight: FontWeight.w600,
           height: 25 / 15,
         ),
-        cursorColor: const Color.fromARGB(117, 0, 0, 0),
-        controller: textEditingController,
         maxLines: maxLines,
+        cursorColor: const Color.fromARGB(117, 0, 0, 0),
+        controller: controller,
       ),
     );
-  }
-
-  Future<void> selectedDate(
-      BuildContext context, DateTime firstDate, DateTime lastDate) async {
-    DateTime? pickedDate = await showDatePicker(
-      context: context,
-      firstDate: firstDate,
-      lastDate: lastDate,
-    );
-
-    if (pickedDate != null) {
-      textEditingController.text = pickedDate.toString().split(' ')[0];
-    }
   }
 }

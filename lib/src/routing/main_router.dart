@@ -9,6 +9,8 @@ import 'package:construction_app/src/features/help/presentation/screens/help_scr
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/splash_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/mangel_bearbeiten_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/mangel_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/daily_report_screen.dart';
 
 import 'package:construction_app/src/features/project/presentation/screens/project_report_screen.dart';
@@ -155,6 +157,24 @@ class _MainRouterState extends State<MainRouter> {
             context,
             state,
             const DashboardScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.MangelScreen.name}',
+          name: AppRoutes.MangelScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            const MangelScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.MangelBearbeitenScreen.name}',
+          name: AppRoutes.MangelBearbeitenScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            const MangelBearbeitenScreen(),
           ),
         ),
       ],
