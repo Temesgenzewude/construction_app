@@ -12,6 +12,9 @@ class HomeAppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 10,
+        ),
         Text(
           'bView',
           style: TextStyle(

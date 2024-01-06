@@ -1,7 +1,9 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProjectCard extends StatelessWidget {
   ProjectCard({
@@ -79,7 +81,9 @@ class ProjectCard extends StatelessWidget {
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
-              onTap: () {},
+              onTap: () {
+                context.go('/${AppRoutes.SampleProjectScreen.name}');
+              },
               child: const Text(
                 'Projekt ansehen',
                 style: TextStyle(

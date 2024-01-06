@@ -125,7 +125,7 @@ class SignupSecondScreen extends HookWidget {
                 hintText: 'Unternehmenstyp',
               ),
               SizedBox(
-                height: AppSizer.getHeight(context, 10.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
 
               //! COUNTRY CODE SELECTION
@@ -136,7 +136,7 @@ class SignupSecondScreen extends HookWidget {
               ),
 
               SizedBox(
-                height: AppSizer.getHeight(context, 10.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
 
               //! EMPLOYEE SELECTION
@@ -147,7 +147,7 @@ class SignupSecondScreen extends HookWidget {
                 hintText: 'Wählen Mitarbeiter',
               ),
               SizedBox(
-                height: AppSizer.getHeight(context, 8.0),
+                height: AppSizer.getHeight(context, 20.0),
               ),
               const Text(
                 'Ich akzeptiere im Namen des Uternehmens \ndie Bedingungen der Abonnementvertrag \nund der Servicebeschreibung',
