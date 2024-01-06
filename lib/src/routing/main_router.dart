@@ -11,7 +11,10 @@ import 'package:construction_app/src/features/onboarding/presentation/screens/sp
 
 import 'package:construction_app/src/features/project/presentation/screens/project_report_screen.dart';
 
+import 'package:construction_app/src/features/project/presentation/screens/construction_plan_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/construction_schedule_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/create_project_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/documents_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/projects_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/sample_project_screen.dart';
 
@@ -33,7 +36,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.HomeScreen.name}',
+      initialLocation: '/${AppRoutes.ConstructionScheduleScreen.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.SplashScreen.name}',
@@ -115,6 +118,30 @@ class _MainRouterState extends State<MainRouter> {
           pageBuilder: (context, state) => buildCustomTransitionForPage(
               context, state,   ProjectReportScreen()),
         ),
+        GoRoute(
+          path: '/${AppRoutes.DocumentsScreen.name}',
+          name: AppRoutes.DocumentsScreen.name,
+          pageBuilder: (context, state) =>
+              buildCustomTransitionForPage(context, state, const DocumentsScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.ConstructionScheduleScreen.name}',
+          name: AppRoutes.ConstructionScheduleScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            const ConstructionScheduleScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.ConstructionPlanScreen.name}',
+          name: AppRoutes.ConstructionPlanScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            const ConstructionPlanScreen(),
+          ),
+        ),
       ],
     );
 
@@ -122,6 +149,7 @@ class _MainRouterState extends State<MainRouter> {
       debugShowCheckedModeBanner: false,
       routerConfig: router,
       title: 'Construction Trading App',
+      theme: ThemeData(fontFamily: 'Montserrat'),
     );
   }
 

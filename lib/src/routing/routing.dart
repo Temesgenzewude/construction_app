@@ -16,6 +16,9 @@ enum AppRoutes {
   HelpScreen, 
   CreateProjectScreen, 
   ProjectsScreen, 
-  SampleProjectScreen
+  SampleProjectScreen,
+  DocumentsScreen, 
+  ConstructionScheduleScreen,
+  ConstructionPlanScreen,
 
 }
