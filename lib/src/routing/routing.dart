@@ -25,5 +25,9 @@ enum AppRoutes {
   DashboardScreen,
   MangelScreen,
   MangelBearbeitenScreen,
+  ProfileScreen,
+  NotificationScreen,
+  GroupsScreen,
+  AddGroupScreen,
 
 }

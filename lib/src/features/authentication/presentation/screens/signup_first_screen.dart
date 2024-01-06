@@ -1,6 +1,6 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/constants/constant.dart';
-import 'package:construction_app/src/features/authentication/presentation/widgets/custom_textfield.dart';
+import 'package:construction_app/src/features/authentication/presentation/widgets/custom_text_field.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
@@ -72,7 +72,7 @@ class SignupFirstScreen extends HookWidget {
               SizedBox(
                 height: AppSizer.getHeight(context, 24.0),
               ),
-              CustomTextField(
+              TextFieldWithlabel(
                 controller: firstNameController,
                 label: 'Vorname',
                 obscurePassword: false,
@@ -80,7 +80,7 @@ class SignupFirstScreen extends HookWidget {
               SizedBox(
                 height: AppSizer.getHeight(context, 20.0),
               ),
-              CustomTextField(
+              TextFieldWithlabel(
                 controller: lastNameController,
                 label: 'Nachname',
                 obscurePassword: false,
@@ -88,7 +88,7 @@ class SignupFirstScreen extends HookWidget {
               SizedBox(
                 height: AppSizer.getHeight(context, 20.0),
               ),
-              CustomTextField(
+              TextFieldWithlabel(
                 controller: emailController,
                 label: 'Email',
                 prefixIcon: const Icon(Icons.email_outlined),
@@ -97,7 +97,7 @@ class SignupFirstScreen extends HookWidget {
               SizedBox(
                 height: AppSizer.getHeight(context, 20.0),
               ),
-              CustomTextField(
+              TextFieldWithlabel(
                 controller: passwordController,
                 label: 'Passwort',
                 prefixIcon: const Icon(Icons.lock_outline),
@@ -133,7 +133,7 @@ class SignupFirstScreen extends HookWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      context.pushNamed(AppRoutes.SignupSecondScreen.name);
+                      context.go('/${AppRoutes.SignupSecondScreen.name}');
                     },
                     child: const Text(
                       'Nächste',

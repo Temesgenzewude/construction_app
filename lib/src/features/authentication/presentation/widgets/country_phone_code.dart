@@ -1,9 +1,8 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class CountryPhoneCodeInput extends HookWidget {
+class CountryPhoneCodeInput extends StatelessWidget {
   const CountryPhoneCodeInput({
     super.key,
     required this.countriesCode,
