@@ -116,7 +116,7 @@ class DailyReportScreen extends HookWidget {
               InputFieldWithLable(
                 label: 'Adresse',
                 controller: TextEditingController(),
-                width: AppSizer.getWidth(context, 265),
+                width: AppSizer.getWidth(context, 255),
                 height: AppSizer.getHeight(context, 30),
               ),
               SizedBox(height: AppSizer.getHeight(context, 22)),
@@ -268,7 +268,7 @@ class DailyReportScreen extends HookWidget {
               InputFieldWithLable(
                 label: 'Allgemeine Bemerkung',
                 controller: TextEditingController(),
-                width: AppSizer.getWidth(context, 155),
+                width: AppSizer.getWidth(context, 150),
                 height: AppSizer.getHeight(context, 30),
               ),
             ],
