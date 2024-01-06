@@ -61,7 +61,7 @@ class PageNotFoundScreen extends Page {
                           ),
                         ),
                         onPressed: () {
-                          context.go('/${AppRoutes.SplashScreen.name}');
+                          context.goNamed(AppRoutes.SplashScreen.name);
                         },
                         child: const Text(
                           'Go Home',

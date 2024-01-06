@@ -26,7 +26,7 @@ class DrawerSetting extends StatelessWidget {
           ),
           Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13,
             ),
           )

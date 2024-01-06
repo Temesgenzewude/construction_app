@@ -5,6 +5,7 @@ import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/help/presentation/widgets/help_setting.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});
@@ -15,7 +16,9 @@ class HelpScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+          },
         ),
         title: const Text(
           'Unterstützung',

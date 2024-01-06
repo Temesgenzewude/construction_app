@@ -133,7 +133,7 @@ class SignupFirstScreen extends HookWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      context.go('/${AppRoutes.SignupSecondScreen.name}');
+                      context.pushNamed(AppRoutes.SignupSecondScreen.name);
                     },
                     child: const Text(
                       'Nächste',

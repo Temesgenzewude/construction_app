@@ -1,16 +1,16 @@
-// ignore_for_file: must_be_immutable
+
 
 import 'package:flutter/material.dart';
 
 class HelpSettingTile extends StatelessWidget {
-  HelpSettingTile({
+  const HelpSettingTile({
     super.key,
     required this.icon,
     required this.text,
   });
 
-  String text;
-  Icon icon;
+  final String text;
+  final Icon icon;
 
   @override
   Widget build(BuildContext context) {

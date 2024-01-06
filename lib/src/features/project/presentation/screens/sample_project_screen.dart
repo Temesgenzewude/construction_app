@@ -4,6 +4,7 @@ import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/project/presentation/widgets/setting_tile.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SampleProjectScreen extends StatefulWidget {
   const SampleProjectScreen({super.key});
@@ -19,7 +20,9 @@ class _SampleProjectScreenState extends State<SampleProjectScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+          },
         ),
         title: const Text(
           'Beispielprojekt',

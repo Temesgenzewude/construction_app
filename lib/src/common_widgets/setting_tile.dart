@@ -1,14 +1,13 @@
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class SettingTitle extends StatelessWidget {
-  SettingTitle({
+  const SettingTitle({
     super.key,
     required this.title,
   });
 
-  String title;
+  final String title;
 
   @override
   Widget build(BuildContext context) {

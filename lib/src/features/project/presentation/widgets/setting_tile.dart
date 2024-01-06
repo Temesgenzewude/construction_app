@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 
 class SettingTile extends StatelessWidget {
@@ -9,10 +7,10 @@ class SettingTile extends StatelessWidget {
     this.icon,
     this.suffixText,
   });
-  String text;
-  bool? icon;
-  String? suffixText;
-  Function()? onPressed = () {};
+  final String text;
+  final bool? icon;
+  final String? suffixText;
+  final Function()? onPressed = () {};
 
   @override
   Widget build(BuildContext context) {

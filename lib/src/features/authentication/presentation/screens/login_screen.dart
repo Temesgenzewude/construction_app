@@ -91,7 +91,7 @@ class LoginScreen extends HookWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   const Text(
-                    'Sie haben noch kein Konto? ',
+                    'Passwort ',
                     style: TextStyle(
                       color: AppColors.secondaryText,
                       fontSize: 16,
@@ -100,11 +100,9 @@ class LoginScreen extends HookWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      context.goNamed(AppRoutes.SignupFirstScreen.name);
-                    },
+                    onTap: () {},
                     child: const Text(
-                      'Registrieren',
+                      'vergessen?',
                       style: TextStyle(
                         color: AppColors.primary,
                         fontSize: 16,
@@ -115,14 +113,47 @@ class LoginScreen extends HookWidget {
                   ),
                 ],
               ),
-              SizedBox(height: AppSizer.getHeight(context, 20.0)),
+              SizedBox(height: AppSizer.getHeight(context, 30.0)),
               CustomButton(
-                onTap: () {},
+                onTap: () {
+                  context.goNamed(AppRoutes.HomeScreen.name);
+                },
                 buttonName: 'Anmeldung',
                 topbottom: 15,
                 leftright: 80,
                 buttonColor: AppColors.primary,
                 textColor: AppColors.secondary,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Text(
+                      'Sie haben noch kein Konto? ',
+                      style: TextStyle(
+                        color: AppColors.secondaryText,
+                        fontSize: 16,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        context.goNamed(AppRoutes.SignupFirstScreen.name);
+                      },
+                      child: const Text(
+                        'Registrieren',
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

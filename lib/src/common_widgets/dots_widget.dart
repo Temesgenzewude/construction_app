@@ -1,14 +1,12 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:construction_app/src/common_widgets/selected_dot_widget.dart';
 import 'package:construction_app/src/common_widgets/unselected_dot_widget.dart';
 import 'package:flutter/material.dart';
 
 class DotsWidget extends StatefulWidget {
   final int selectedIndex;
-  double? size;
-  int? totalDots;
-  DotsWidget(
+  final double? size;
+  final int? totalDots;
+  const DotsWidget(
       {required this.selectedIndex, this.size, super.key, this.totalDots});
 
   @override

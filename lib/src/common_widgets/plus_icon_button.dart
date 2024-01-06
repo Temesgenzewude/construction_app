@@ -1,11 +1,9 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class PlusIconbutton extends StatelessWidget {
-  PlusIconbutton({super.key, this.onTap});
-  Function()? onTap;
+  const PlusIconbutton({super.key, this.onTap});
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {

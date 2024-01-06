@@ -1,11 +1,8 @@
-
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 
 class FieldLable extends StatelessWidget {
-  FieldLable({super.key, required this.labelText});
-  String labelText;
+  const FieldLable({super.key, required this.labelText});
+  final String labelText;
   @override
   Widget build(BuildContext context) {
     return Text(
