@@ -82,7 +82,7 @@ class PremiumPlanScreen extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                context.goNamed(AppRoutes.HomeScreen.name);
+                context.goNamed(AppRoutes.DashboardScreen.name);
               },
               buttonName: 'Plan starten',
               topbottom: 15,

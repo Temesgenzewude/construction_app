@@ -244,34 +244,6 @@ class HomeScreen extends HookWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                size: 25,
-              ),
-              label: 'Home'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.folder_outlined,
-                size: 25,
-              ),
-              label: 'Projekt'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_circle_outline_outlined,
-                size: 25,
-              ),
-              label: 'Neu'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person_2_outlined,
-                size: 25,
-              ),
-              label: 'Profile')
-        ],
-      ),
     );
   }
 }

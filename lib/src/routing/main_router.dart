@@ -4,6 +4,7 @@ import 'package:construction_app/src/features/authentication/presentation/screen
 import 'package:construction_app/src/features/authentication/presentation/screens/premium_plan_screen.dart';
 import 'package:construction_app/src/features/authentication/presentation/screens/signup_first_screen.dart';
 import 'package:construction_app/src/features/authentication/presentation/screens/signup_second_screen.dart';
+import 'package:construction_app/src/features/dashboard/presentation/screens/dashboard.dart';
 import 'package:construction_app/src/features/help/presentation/screens/help_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/begin_screen.dart';
 import 'package:construction_app/src/features/onboarding/presentation/screens/onboarding_screen.dart';
@@ -121,13 +122,13 @@ class _MainRouterState extends State<MainRouter> {
           path: '/${AppRoutes.DailyReportScreen.name}',
           name: AppRoutes.DailyReportScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state,  const DailyReportScreen()),
+              context, state, const DailyReportScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.DocumentsScreen.name}',
           name: AppRoutes.DocumentsScreen.name,
-          pageBuilder: (context, state) =>
-              buildCustomTransitionForPage(context, state, const DocumentsScreen()),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const DocumentsScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.ConstructionScheduleScreen.name}',
@@ -145,6 +146,15 @@ class _MainRouterState extends State<MainRouter> {
             context,
             state,
             const ConstructionPlanScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.DashboardScreen.name}',
+          name: AppRoutes.DashboardScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+            context,
+            state,
+            const DashboardScreen(),
           ),
         ),
       ],
