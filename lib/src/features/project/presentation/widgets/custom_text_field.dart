@@ -1,18 +1,16 @@
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 
-class InputFieldWithLable extends StatelessWidget {
+class TextFieldWithLable extends StatelessWidget {
   final String label;
   final double width;
-  final double height;
   final TextEditingController controller;
 
-  const InputFieldWithLable({
+  const TextFieldWithLable({
     super.key,
     required this.label,
     required this.controller,
     required this.width,
-    required this.height,
   });
 
   @override
@@ -30,9 +28,8 @@ class InputFieldWithLable extends StatelessWidget {
           ),
         ),
         SizedBox(width: AppSizer.getWidth(context, 5)),
-        InputFieldContainer(
+        CustomTextField(
           width: width,
-          height: height,
           controller: controller,
         ),
       ],
@@ -40,24 +37,20 @@ class InputFieldWithLable extends StatelessWidget {
   }
 }
 
-class InputFieldContainer extends StatelessWidget {
-  const InputFieldContainer({
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
     super.key,
     required this.width,
-    required this.height,
     required this.controller,
   });
 
   final double width;
-  final double height;
   final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      // height: height,
-      // padding: const EdgeInsets.vertical(10),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -83,8 +76,12 @@ class InputFieldContainer extends StatelessWidget {
         decoration: const InputDecoration(
           isDense: true,
           border: InputBorder.none,
-          contentPadding:
-              EdgeInsets.only(left: 10, right: 5, top: 2, bottom: 2),
+          contentPadding: EdgeInsets.only(
+            left: 10,
+            right: 5,
+            top: 2,
+            bottom: 2,
+          ),
         ),
       ),
     );

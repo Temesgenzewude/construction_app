@@ -1,6 +1,6 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/project/presentation/widgets/check_box_container.dart';
-import 'package:construction_app/src/features/project/presentation/widgets/input_filed.dart';
+import 'package:construction_app/src/features/project/presentation/widgets/custom_text_field.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +12,16 @@ class DailyReportScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final allgemeineController = useTextEditingController();
+    final maxController = useTextEditingController();
+    final minController = useTextEditingController();
+    final adresseController = useTextEditingController();
+    final firmaController = useTextEditingController();
+    final projektController = useTextEditingController();
+    final uhrzeitController = useTextEditingController();
+    final datumController = useTextEditingController();
+    final berichtsController = useTextEditingController();
+
     final trockenState = useState(false);
     final regenlState = useState(false);
     final schneefallState = useState(false);
@@ -73,23 +83,20 @@ class DailyReportScreen extends HookWidget {
                 runSpacing: AppSizer.getHeight(context, 10),
                 direction: Axis.horizontal,
                 children: [
-                  InputFieldWithLable(
+                  TextFieldWithLable(
                     label: 'Berichts Nr',
-                    controller: TextEditingController(),
+                    controller: berichtsController,
                     width: AppSizer.getWidth(context, 45),
-                    height: AppSizer.getHeight(context, 28),
                   ),
-                  InputFieldWithLable(
+                  TextFieldWithLable(
                     label: 'Datum',
-                    controller: TextEditingController(),
+                    controller: datumController,
                     width: AppSizer.getWidth(context, 45),
-                    height: AppSizer.getHeight(context, 28),
                   ),
-                  InputFieldWithLable(
+                  TextFieldWithLable(
                     label: 'Uhrzeit',
-                    controller: TextEditingController(),
+                    controller: uhrzeitController,
                     width: AppSizer.getWidth(context, 45),
-                    height: AppSizer.getHeight(context, 28),
                   ),
                 ],
               ),
@@ -98,27 +105,25 @@ class DailyReportScreen extends HookWidget {
                 spacing: AppSizer.getWidth(context, 30),
                 runSpacing: AppSizer.getHeight(context, 10),
                 children: [
-                  InputFieldWithLable(
+                  TextFieldWithLable(
                     label: 'Projekt',
-                    controller: TextEditingController(),
+                    controller: projektController,
                     width: AppSizer.getWidth(context, 45),
-                    height: AppSizer.getHeight(context, 30),
                   ),
-                  InputFieldWithLable(
+                  TextFieldWithLable(
                     label: 'Firma',
-                    controller: TextEditingController(),
+                    controller: firmaController,
                     width: AppSizer.getWidth(context, 45),
-                    height: AppSizer.getHeight(context, 30),
                   ),
                 ],
               ),
               SizedBox(height: AppSizer.getHeight(context, 22)),
-              InputFieldWithLable(
+              TextFieldWithLable(
                 label: 'Adresse',
-                controller: TextEditingController(),
+                controller: adresseController,
                 width: AppSizer.getWidth(context, 255),
-                height: AppSizer.getHeight(context, 30),
               ),
+
               SizedBox(height: AppSizer.getHeight(context, 22)),
               const Text(
                 'Wetter und Witterung',
@@ -148,10 +153,9 @@ class DailyReportScreen extends HookWidget {
                         ),
                       ),
                       SizedBox(width: AppSizer.getWidth(context, 27)),
-                      InputFieldContainer(
-                        controller: TextEditingController(),
+                      CustomTextField(
+                        controller: minController,
                         width: AppSizer.getWidth(context, 95),
-                        height: AppSizer.getHeight(context, 30),
                       ),
                     ],
                   ),
@@ -168,10 +172,9 @@ class DailyReportScreen extends HookWidget {
                         ),
                       ),
                       SizedBox(width: AppSizer.getWidth(context, 27)),
-                      InputFieldContainer(
-                        controller: TextEditingController(),
+                      CustomTextField(
+                        controller: maxController,
                         width: AppSizer.getWidth(context, 95),
-                        height: AppSizer.getHeight(context, 30),
                       ),
                     ],
                   ),
@@ -277,11 +280,10 @@ class DailyReportScreen extends HookWidget {
               SizedBox(height: AppSizer.getHeight(context, 22)),
 
               //! INPUT FIELD
-              InputFieldWithLable(
+              TextFieldWithLable(
                 label: 'Allgemeine Bemerkung',
-                controller: TextEditingController(),
+                controller: allgemeineController,
                 width: AppSizer.getWidth(context, 150),
-                height: AppSizer.getHeight(context, 30),
               ),
             ],
           ),
