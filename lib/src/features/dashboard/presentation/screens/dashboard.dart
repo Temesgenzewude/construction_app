@@ -11,7 +11,7 @@ class DashboardScreen extends HookWidget {
   Widget build(BuildContext context) {
     List<Widget> pages = [
       const HomeScreen(),
-      const ProjectsScreen(),
+      ProjectsScreen(),
       const CreateProjectScreen(),
       const Scaffold(
         body: Center(child: Text("Profile Screen")),

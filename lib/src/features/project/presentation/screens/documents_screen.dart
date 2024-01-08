@@ -2,9 +2,23 @@ import 'package:construction_app/src/common_widgets/search_bar.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class DocumentsScreen extends StatelessWidget {
-  const DocumentsScreen({super.key});
+  DocumentsScreen({super.key});
+
+  final List<Map<String, dynamic>> documents = [
+    {
+      'title': 'ErdgeschoB',
+      'description': 'Erstellt am 4.9.2023, 10:45:11',
+      'imageUrl': 'assets/images/ph_file.svg',
+    },
+    {
+      'title': 'Leistungsverzeichnis.pdf',
+      'description': 'V1 Erstellt am 4.9.2023, 10:45:12',
+      'imageUrl': 'assets/images/pdf.svg',
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +26,9 @@ class DocumentsScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+          },
         ),
         title: const Text(
           'Dokumente',
@@ -99,40 +115,10 @@ class DocumentsScreen extends StatelessWidget {
                   itemBuilder: (context, index) => Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          SvgPicture.asset('assets/images/ph_file.svg'),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'ErdgeschoB',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w600,
-                                  height: 0,
-                                ),
-                              ),
-                              // SizedBox(height: 3,),
-
-                              Text(
-                                'Erstellt am 4.9.2023, 10:45:11',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0,
-                                ),
-                              )
-                            ],
-                          )
-                        ],
+                      DocumentItem(
+                        description: documents[index]['description'],
+                        imageUrl: documents[index]['imageUrl'],
+                        title: documents[index]['title'],
                       ),
                       IconButton(
                         onPressed: () {},
@@ -146,6 +132,59 @@ class DocumentsScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class DocumentItem extends StatelessWidget {
+  DocumentItem({
+    super.key,
+    required this.description,
+    required this.imageUrl,
+    required this.title,
+  });
+
+  final String imageUrl;
+  final String title;
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        SvgPicture.asset(imageUrl),
+        const SizedBox(
+          width: 3,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: AppSizer.getWidth(context, 14),
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+                height: 0,
+              ),
+            ),
+            // SizedBox(height: 3,),
+
+            Text(
+              description,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 10,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                height: 0,
+              ),
+            )
+          ],
+        )
+      ],
     );
   }
 }
