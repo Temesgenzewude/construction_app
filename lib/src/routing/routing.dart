@@ -16,7 +16,7 @@ enum AppRoutes {
   HelpScreen,
   CreateProjectScreen,
   ProjectsScreen,
-  SampleProjectScreen,
+  BeispielProjektScreen,
   DailyReportScreen,
   DocumentsScreen,
 
@@ -29,5 +29,4 @@ enum AppRoutes {
   NotificationScreen,
   GroupsScreen,
   AddGroupScreen,
-
 }
