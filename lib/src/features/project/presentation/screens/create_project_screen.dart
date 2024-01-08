@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:country_picker/country_picker.dart';
@@ -408,7 +407,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                     backgroundColor: Colors.white,
                     textColor: AppColors.primary,
                     title: 'Abbrechen',
-                    width: 115,
+                    width: 120,
                   ),
                   Button(
                     backgroundColor: AppColors.primary,

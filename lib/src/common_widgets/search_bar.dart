@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatelessWidget {
@@ -32,12 +31,12 @@ class SearchBarWidget extends StatelessWidget {
         ],
       ),
       width: double.infinity,
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.search),
-          Expanded(
+          const Icon(Icons.search),
+          const Expanded(
             child: TextField(
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -45,7 +44,15 @@ class SearchBarWidget extends StatelessWidget {
               ),
             ),
           ),
-          Text('Suchen')
+          Text(
+            'Suchen',
+            style: TextStyle(
+              color: Colors.black.withOpacity(0.7200000286102295),
+              fontSize: 12,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.w600,
+            ),
+          )
         ],
       ),
     );

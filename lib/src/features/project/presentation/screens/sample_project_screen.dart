@@ -6,8 +6,8 @@ import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BeispielProjekt extends StatelessWidget {
-  const BeispielProjekt({super.key});
+class SampleProjectScreen extends StatelessWidget {
+  const SampleProjectScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,9 @@ class BeispielProjekt extends StatelessWidget {
                 text: 'Tickets mit GPS position anzeigen',
                 icon: true,
               ),
-              SettingTitle(title: 'Projektverwaltung',),
+              SettingTitle(
+                title: 'Projektverwaltung',
+              ),
               SettingTile(
                 text: 'Benutzer im Projekt',
                 suffixText: '1 Benutzer',
