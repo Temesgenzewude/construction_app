@@ -44,7 +44,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.NotificationScreen.name}',
+      initialLocation: '/${AppRoutes.SplashScreen.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.SplashScreen.name}',
@@ -133,8 +133,8 @@ class _MainRouterState extends State<MainRouter> {
         GoRoute(
           path: '/${AppRoutes.DocumentsScreen.name}',
           name: AppRoutes.DocumentsScreen.name,
-          pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state, DocumentsScreen()),
+          pageBuilder: (context, state) =>
+              buildCustomTransitionForPage(context, state, DocumentsScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.ConstructionScheduleScreen.name}',
