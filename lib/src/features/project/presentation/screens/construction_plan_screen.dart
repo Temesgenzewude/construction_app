@@ -3,6 +3,7 @@ import 'package:construction_app/src/features/project/presentation/widgets/text_
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
 class ConstructionPlanScreen extends HookWidget {
   const ConstructionPlanScreen({super.key});
@@ -20,7 +21,9 @@ class ConstructionPlanScreen extends HookWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+          },
         ),
         title: const Text(
           'Bauzeitenplan',

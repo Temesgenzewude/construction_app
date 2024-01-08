@@ -3,6 +3,7 @@ import 'package:construction_app/src/features/project/presentation/screens/creat
 import 'package:construction_app/src/features/project/presentation/screens/projects_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_svg/svg.dart';
 
 class DashboardScreen extends HookWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -33,36 +34,39 @@ class DashboardScreen extends HookWidget {
           color: Colors.black,
         ),
         unselectedLabelStyle: const TextStyle(
+          color: Colors.black,
           fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: Color.fromARGB(115, 18, 17, 17),
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w600,
+          height: 0,
         ),
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
-        unselectedIconTheme:
-            const IconThemeData(color: Color.fromARGB(115, 18, 17, 17)),
+        unselectedIconTheme: const IconThemeData(color: Colors.black),
         iconSize: 25,
-        items: const [
-          BottomNavigationBarItem(
+        items: [
+          const BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_outlined,
                 size: 25,
+                weight: 20,
               ),
               label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.folder_outlined,
-                size: 25,
+              icon: SvgPicture.asset(
+                'assets/images/project.svg',
+                height: 20,
+                width: 20,
               ),
               label: 'Projekt'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(
                 Icons.add_circle_outline_outlined,
                 size: 25,
               ),
               label: 'Neu'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(
                 Icons.person_2_outlined,
                 size: 25,
