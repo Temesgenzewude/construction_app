@@ -24,7 +24,7 @@ import 'package:construction_app/src/features/project/presentation/screens/const
 import 'package:construction_app/src/features/project/presentation/screens/create_project_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/documents_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/projects_screen.dart';
-import 'package:construction_app/src/features/project/presentation/screens/sample_project_screen.dart';
+import 'package:construction_app/src/features/project/presentation/screens/beispiel_projekt_screen.dart';
 
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +92,7 @@ class _MainRouterState extends State<MainRouter> {
           path: '/${AppRoutes.HomeScreen.name}',
           name: AppRoutes.HomeScreen.name,
           pageBuilder: (context, state) =>
-              buildCustomTransitionForPage(context, state, const HomeScreen()),
+              buildCustomTransitionForPage(context, state, HomeScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.HelpScreen.name}',
@@ -113,10 +113,10 @@ class _MainRouterState extends State<MainRouter> {
               context, state, const ProjectsScreen()),
         ),
         GoRoute(
-          path: '/${AppRoutes.SampleProjectScreen.name}',
-          name: AppRoutes.SampleProjectScreen.name,
+          path: '/${AppRoutes.BeispielProjektScreen.name}',
+          name: AppRoutes.BeispielProjektScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
-              context, state, const SampleProjectScreen()),
+              context, state, const BeispielProjekt()),
         ),
         GoRoute(
           path: '/${AppRoutes.ProjectReportScreen.name}',
