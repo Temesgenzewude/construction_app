@@ -23,6 +23,8 @@ class SettingTile extends StatelessWidget {
               text,
               style: const TextStyle(
                 fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
               ),
             )
           ],
@@ -32,11 +34,14 @@ class SettingTile extends StatelessWidget {
             suffixText != null
                 ? Text(
                     suffixText!,
-                    style: const TextStyle(
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.7200000286102295),
                       fontSize: 12,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w500,
                     ),
                   )
-                : SizedBox(),
+                : const SizedBox(),
             icon != null
                 ? IconButton(
                     onPressed: onPressed,
@@ -44,7 +49,7 @@ class SettingTile extends StatelessWidget {
                       Icons.navigate_next,
                     ),
                   )
-                : SizedBox(),
+                : const SizedBox(),
           ],
         )
       ],

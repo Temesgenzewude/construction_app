@@ -6,14 +6,9 @@ import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SampleProjectScreen extends StatefulWidget {
-  const SampleProjectScreen({super.key});
+class BeispielProjekt extends StatelessWidget {
+  const BeispielProjekt({super.key});
 
-  @override
-  State<SampleProjectScreen> createState() => _SampleProjectScreenState();
-}
-
-class _SampleProjectScreenState extends State<SampleProjectScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +74,7 @@ class _SampleProjectScreenState extends State<SampleProjectScreen> {
                 text: 'Tickets mit GPS position anzeigen',
                 icon: true,
               ),
-              SettingTitle(title: 'Projektverwaltung'),
+              SettingTitle(title: 'Projektverwaltung',),
               SettingTile(
                 text: 'Benutzer im Projekt',
                 suffixText: '1 Benutzer',

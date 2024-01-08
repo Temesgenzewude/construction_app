@@ -80,7 +80,7 @@ class ProjectCard extends StatelessWidget {
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
               onTap: () {
-                context.pushNamed(AppRoutes.SampleProjectScreen.name);
+                context.pushNamed(AppRoutes.BeispielProjektScreen.name);
               },
               child: const Text(
                 'Projekt ansehen',

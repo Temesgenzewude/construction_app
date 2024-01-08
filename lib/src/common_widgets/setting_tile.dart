@@ -25,7 +25,8 @@ class SettingTitle extends StatelessWidget {
         title,
         style: const TextStyle(
           fontSize: 12,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
+          fontFamily: 'Montserrat',
         ),
       ),
     );
