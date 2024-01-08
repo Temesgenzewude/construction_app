@@ -4,6 +4,7 @@ import 'package:construction_app/src/common_widgets/plus_icon_button.dart';
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/app_bar.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/drawer_widget.dart';
+import 'package:construction_app/src/features/Home/presentation/widgets/popup.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/project_card.dart';
 import 'package:construction_app/src/routing/routing.dart';
 
@@ -11,12 +12,37 @@ import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends HookWidget {
   const HomeScreen({super.key});
 
+  Future<void> _showPopup(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    // prefs.clear();
+    bool hasSeenPopup = prefs.getBool('hasSeenPopup') ?? false;
+
+    if (!hasSeenPopup) {
+      showPopup(context);
+      await prefs.setBool('hasSeenPopup', true);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    void useEffectOnce(void Function() effect) {
+      useEffect(() {
+        effect();
+        return null;
+      }, const []);
+    }
+
+    useEffectOnce(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _showPopup(context);
+      });
+    });
+
     final selectedIndex = useState(0);
     final pageController = usePageController();
 
@@ -28,7 +54,9 @@ class HomeScreen extends HookWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         flexibleSpace: Padding(
-          padding: EdgeInsets.only(top: AppSizer.getHeight(context, 45)),
+          padding: EdgeInsets.only(
+            top: AppSizer.getHeight(context, 5),
+          ),
           child: const HomeAppBarWidget(),
         ),
         centerTitle: true,
