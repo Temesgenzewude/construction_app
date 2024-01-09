@@ -85,8 +85,8 @@ class PremiumPlanScreen extends HookWidget {
                 context.goNamed(AppRoutes.DashboardScreen.name);
               },
               buttonName: 'Plan starten',
-              topbottom: 15,
-              leftright: 80,
+              height: 15,
+              // leftright: 80,
               buttonColor: AppColors.secondary,
               textColor: AppColors.primary,
             ),

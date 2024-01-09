@@ -57,22 +57,28 @@ class SignupSecondScreen extends HookWidget {
 
     return Scaffold(
       backgroundColor: AppColors.secondary,
+      appBar: AppBar(
+        backgroundColor: AppColors.secondary,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              context.goNamed(AppRoutes.SignupFirstScreen.name);
+            },
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.only(
+            left: 25,
+            right: 25,
+            bottom: 25,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: AppSizer.getHeight(context, 30.0),
-              ),
-              //! BACK BUTTON
-              IconButton(
-                icon: const Icon(Icons.arrow_back),
-                onPressed: () {
-                  context.goNamed(AppRoutes.SignupFirstScreen.name);
-                },
-              ),
               const Center(
                 child: Text(
                   companyName,
@@ -168,15 +174,15 @@ class SignupSecondScreen extends HookWidget {
                   context.goNamed(AppRoutes.PremiumPlanScreen.name);
                 },
                 buttonName: 'Registrieren',
-                topbottom: 15,
-                leftright: 80,
+                height: 15,
+                // leftright: 80,
                 buttonColor: AppColors.primary,
                 textColor: AppColors.secondary,
               ),
               SizedBox(
                 height: AppSizer.getHeight(context, 8.0),
               ),
-              Row(
+              Wrap(
                 children: [
                   const Text(
                     'Sie haben bereits ein Konto? ',

@@ -1,9 +1,11 @@
+import 'package:construction_app/src/common_widgets/search_bar.dart';
 import 'package:construction_app/src/constants/colors.dart';
-import 'package:construction_app/src/features/groups/presentation/widgets/search_bar.dart';
 import 'package:construction_app/src/features/project/presentation/widgets/add_button.dart';
 import 'package:construction_app/src/features/project/presentation/widgets/project_report_card.dart';
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProjectReportScreen extends StatelessWidget {
   ProjectReportScreen({super.key});
@@ -32,31 +34,44 @@ class ProjectReportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
+      appBar: AppBar(
+        backgroundColor: AppColors.secondary,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            context.goNamed(AppRoutes.DashboardScreen.name);
+          },
+        ),
+        title: const Text(
+          'Projektberichte',
+          style: TextStyle(
+            color: AppColors.primary,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: AppSizer.getWidth(context, 30)),
+            child: const Icon(Icons.more_horiz),
+          ),
+        ],
+        centerTitle: true,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4.0),
+          child: Container(
+            height: 2,
+            color: const Color.fromARGB(255, 167, 163, 163),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: AppSizer.getHeight(context, 30)),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.arrow_back),
-                  Text(
-                    'Projektberichte',
-                    style: TextStyle(
-                      color: AppColors.primary,
-                      fontSize: 16,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Icon(Icons.more_horiz),
-                ],
-              ),
-              SizedBox(height: AppSizer.getHeight(context, 25)),
-              const CustomSearchBar(),
+              const SearchBarWidget(),
               SizedBox(height: AppSizer.getHeight(context, 20)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

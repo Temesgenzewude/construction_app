@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +80,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            context.pop();
+            context.goNamed(AppRoutes.DashboardScreen.name);
           },
         ),
         title: const Text(

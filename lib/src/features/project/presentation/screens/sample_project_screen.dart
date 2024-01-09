@@ -17,7 +17,7 @@ class SampleProjectScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            context.pop();
+            context.goNamed(AppRoutes.DashboardScreen.name);
           },
         ),
         title: const Text(

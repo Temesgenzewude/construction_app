@@ -37,35 +37,34 @@ class DailyReportScreen extends HookWidget {
 
     return Scaffold(
       backgroundColor: AppColors.secondary,
+      appBar: AppBar(
+        backgroundColor: AppColors.secondary,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            context.goNamed(AppRoutes.ProjectReportScreen.name);
+          },
+        ),
+        title: const Text(
+          'Projektberichte',
+          style: TextStyle(
+            color: AppColors.primary,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.only(
+            left: 30,
+            right: 30,
+            bottom: 30,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: AppSizer.getHeight(context, 30)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      context.goNamed(AppRoutes.ProjectReportScreen.name);
-                    },
-                    child: const Icon(Icons.arrow_back),
-                  ),
-                  SizedBox(width: AppSizer.getWidth(context, 70)),
-                  const Text(
-                    'Projektberichte',
-                    style: TextStyle(
-                      color: AppColors.primary,
-                      fontSize: 16,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: AppSizer.getHeight(context, 22)),
               const Text(
                 'Bautagesbericht',
                 style: TextStyle(

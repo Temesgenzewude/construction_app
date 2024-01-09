@@ -6,8 +6,14 @@ class DotsWidget extends StatefulWidget {
   final int selectedIndex;
   final double? size;
   final int? totalDots;
-  const DotsWidget(
-      {required this.selectedIndex, this.size, super.key, this.totalDots});
+  final Color? selectedColor;
+  const DotsWidget({
+    required this.selectedIndex,
+    this.size,
+    super.key,
+    this.totalDots,
+    this.selectedColor,
+  });
 
   @override
   State<DotsWidget> createState() => _DotsWidgetState();
@@ -21,7 +27,10 @@ class _DotsWidgetState extends State<DotsWidget> {
       children: List.generate(
         widget.totalDots ?? 4,
         (index) => index == widget.selectedIndex
-            ? SelectedDot(size: widget.size)
+            ? SelectedDot(
+                size: widget.size,
+                selectedColor: widget.selectedColor,
+              )
             : UnselectedDot(
                 size: widget.size,
               ),

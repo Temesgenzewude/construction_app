@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 class CustomButton extends StatelessWidget {
   final String routeName;
   final String buttonName;
-  final double topbottom;
-  final double leftright;
+  final double height;
+  final double width;
   final Color buttonColor;
   final Color textColor;
 
@@ -13,8 +13,8 @@ class CustomButton extends StatelessWidget {
     Key? key,
     required this.routeName,
     required this.buttonName,
-    required this.topbottom,
-    required this.leftright,
+    required this.height,
+    required this.width,
     required this.buttonColor,
     required this.textColor,
   }) : super(key: key);
@@ -27,11 +27,9 @@ class CustomButton extends StatelessWidget {
       },
       borderRadius: BorderRadius.circular(8),
       child: Container(
-        padding: EdgeInsets.only(
-          right: leftright,
-          left: leftright,
-          top: topbottom,
-          bottom: topbottom,
+        padding: EdgeInsets.symmetric(
+          vertical: height,
+          horizontal: width
         ),
         decoration: ShapeDecoration(
           color: buttonColor,
@@ -50,7 +48,6 @@ class CustomButton extends StatelessWidget {
                 fontSize: 20,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w700,
-                height: 0,
               ),
             ),
           ],

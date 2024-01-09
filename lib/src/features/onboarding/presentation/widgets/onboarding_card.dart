@@ -22,7 +22,7 @@ class OnboardingCard extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 24, left: 24.0, right: 24.0),
+          padding: const EdgeInsets.only(top: 24, left: 5.0, right: 5.0),
           child: Text(
             description,
             textAlign: TextAlign.center,

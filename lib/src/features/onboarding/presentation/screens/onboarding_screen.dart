@@ -1,3 +1,4 @@
+import 'package:construction_app/src/common_widgets/dots_widget.dart';
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/onboarding/presentation/widgets/custom_button.dart';
 import 'package:construction_app/src/features/onboarding/presentation/widgets/onboarding_card.dart';
@@ -5,7 +6,6 @@ import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends HookWidget {
   OnboardingScreen({super.key});
@@ -13,17 +13,17 @@ class OnboardingScreen extends HookWidget {
   final List<Widget> _pages = [
     const OnboardingCard(
       description:
-          'Die digitale Verbindung zwischen Baustelle und Büro ermöglicht Echtzeitkommunikation, Ressourcenmanagement und die effektive Überwachung von Bauprojectenmanagement.',
+        'Die digitale Verbindung zwischen Baustelle und \nBüro ermöglicht Echtzeitkommunikation, \nRessourcenmanagement und die effektive Überwachung \nvon Bauprojectenmanagement.',
       imageUrl: 'assets/images/first.png',
     ),
     const OnboardingCard(
       description:
-          'Die Vorteile, alles auf einem mobilen Gerät zu haben, umfassen flexible Mobilität, nahtlose Integration und effiziente Datenverwaltung unterwegs.',
+          'Die Vorteile, alles auf einem mobilen Gerät zu \nhaben, umfassen flexible Mobilität, nahtlose \nIntegration undeffiziente Datenverwaltung \nunterwegs.',
       imageUrl: 'assets/images/second.png',
     ),
     const OnboardingCard(
       description:
-          'Effizienz auf der Baustelle ist entscheident, um Zeit-und Ressourcenverschwendung zu  minimieren und die Produktivität zu steigern.',
+          'Effizienz auf der Baustelle ist entscheident, um \nZeit-und Ressourcenverschwendung zu  \nminimieren und die \nProduktivität zu steigern.',
       imageUrl: 'assets/images/third.png',
     ),
   ];
@@ -60,36 +60,25 @@ class OnboardingScreen extends HookWidget {
               ),
             ),
           ),
+          SizedBox(height: AppSizer.getHeight(context, 5)),
+          Center(
+            child: DotsWidget(
+              selectedIndex: currentPage.value,
+              selectedColor: AppColors.secondary,
+              size: 20,
+              totalDots: 3,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SmoothPageIndicator(
-                          controller: pageController,
-                          count: _pages.length,
-                          effect: const WormEffect(
-                            dotWidth: 10,
-                            dotHeight: 10,
-                            activeDotColor: AppColors.secondary,
-                            dotColor: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
                 SizedBox(height: AppSizer.getHeight(context, 24.0)),
                 CustomButton(
                   routeName: AppRoutes.AuthScreen.name,
                   buttonName: 'Weitermachen',
-                  topbottom: 15,
-                  leftright: 80,
+                  height: 15,
+                  width: 75,
                   buttonColor: AppColors.secondary,
                   textColor: AppColors.primary,
                 ),

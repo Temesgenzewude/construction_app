@@ -1,9 +1,11 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/profile/presentation/widget/pop_up.dart';
 import 'package:construction_app/src/features/profile/presentation/widget/user_info.dart';
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -12,44 +14,35 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
+      appBar: AppBar(
+        backgroundColor: AppColors.secondary,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            context.goNamed(AppRoutes.DashboardScreen.name);
+          },
+        ),
+        title: const Text(
+          'Mein Konto',
+          style: TextStyle(
+            color: AppColors.primary,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+
+          ),
+        ),
+        centerTitle: true,
+         bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4.0),
+          child: Container(
+            height: 2,
+            color: const Color.fromARGB(255, 167, 163, 163),
+          ),
+        ),
+      ),
       body: Column(
         children: [
-          SizedBox(height: AppSizer.getHeight(context, 30)),
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0, right: 30, top: 30),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: const Icon(Icons.arrow_back),
-                ),
-                SizedBox(width: AppSizer.getWidth(context, 90)),
-                const Text(
-                  'Mein Konto',
-                  style: TextStyle(
-                    color: AppColors.primary,
-                    fontSize: 16,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: AppSizer.getHeight(context, 22)),
-          Container(
-            width: double.infinity,
-            decoration: const ShapeDecoration(
-              shape: RoundedRectangleBorder(
-                side: BorderSide(
-                  width: 2,
-                  strokeAlign: BorderSide.strokeAlignCenter,
-                  color: Color(0xB7A6A3A3),
-                ),
-              ),
-            ),
-          ),
+         
           SizedBox(height: AppSizer.getHeight(context, 22)),
           Center(
             child: Container(
@@ -64,51 +57,47 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
+          const Center(
+            child: Text(
+              'Micheal Jean',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          SizedBox(height: AppSizer.getHeight(context, 2)),
           Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
+            padding: EdgeInsets.only(
+                left: 50, right: AppSizer.getWidth(context, 50)),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Micheal Jean',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        SizedBox(height: AppSizer.getHeight(context, 5)),
-                        const Text(
-                          'CEO Apha Construct',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 10,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 80.0),
-                      child: SvgPicture.asset(
-                        "assets/icons/edit-2.svg",
-                        width: AppSizer.getWidth(context, 18),
-                        height: AppSizer.getWidth(context, 18),
+                    const Text(
+                      'CEO Apha Construct',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w500,
                       ),
+                    ),
+                    SizedBox(width: AppSizer.getWidth(context, 70)),
+                    SvgPicture.asset(
+                      "assets/icons/edit-2.svg",
+                      width: AppSizer.getWidth(context, 18),
+                      height: AppSizer.getWidth(context, 18),
                     ),
                   ],
                 ),
-                SizedBox(height: AppSizer.getHeight(context, 50)),
+                SizedBox(height: AppSizer.getHeight(context, 40)),
                 const UserInfo(
                   iconName: 'mail.svg',
                   label: 'email',

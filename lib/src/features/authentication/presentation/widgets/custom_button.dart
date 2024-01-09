@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonName;
-  final double topbottom;
-  final double leftright;
+  final double height;
+  // final double width;
   final Color buttonColor;
   final Color textColor;
   final void Function()? onTap;
@@ -12,8 +12,8 @@ class CustomButton extends StatelessWidget {
     super.key,
     this.onTap,
     required this.buttonName,
-    required this.topbottom,
-    required this.leftright,
+    required this.height,
+    // required this.width,
     required this.buttonColor,
     required this.textColor,
   });
@@ -24,11 +24,10 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),
       child: Container(
-        padding: EdgeInsets.only(
-          right: leftright,
-          left: leftright,
-          top: topbottom,
-          bottom: topbottom,
+        padding: EdgeInsets.symmetric(
+          vertical: height,
+          // horizontal: width,
+         
         ),
         decoration: ShapeDecoration(
           color: buttonColor,

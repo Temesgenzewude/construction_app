@@ -1,4 +1,5 @@
 import 'package:construction_app/src/constants/colors.dart';
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -27,50 +28,36 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
+      appBar: AppBar(
+        backgroundColor: AppColors.secondary,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            context.goNamed(AppRoutes.DashboardScreen.name);
+          },
+        ),
+        title: const Text(
+          'Benachrichtigung',
+          style: TextStyle(
+            color: AppColors.primary,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4.0),
+          child: Container(
+            height: 2,
+            color: const Color.fromARGB(255, 167, 163, 163),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: AppSizer.getHeight(context, 30)),
             Padding(
-              padding: const EdgeInsets.only(left: 30.0, right: 30, top: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      context.pop();
-                    },
-                    child: const Icon(Icons.arrow_back),
-                  ),
-                  SizedBox(width: AppSizer.getWidth(context, 60)),
-                  const Text(
-                    'Benachrichtigung',
-                    style: TextStyle(
-                      color: AppColors.primary,
-                      fontSize: 16,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: AppSizer.getHeight(context, 22)),
-            Container(
-              width: double.infinity,
-              decoration: const ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    width: 2,
-                    strokeAlign: BorderSide.strokeAlignCenter,
-                    color: Color(0xB7A6A3A3),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: AppSizer.getHeight(context, 22)),
-            Padding(
-              padding: const EdgeInsets.all(40),
+              padding: const EdgeInsets.all(30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
