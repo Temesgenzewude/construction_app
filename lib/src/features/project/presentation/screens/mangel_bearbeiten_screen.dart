@@ -28,11 +28,10 @@ class MangelBearbeitenScreen extends HookWidget {
         title: const Text(
           'Mangel Bearbeiten',
           style: TextStyle(
-            color: Color(0xFF041675),
+            color: AppColors.primary,
             fontSize: 16,
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w600,
-            height: 0,
           ),
         ),
         centerTitle: true,
@@ -49,13 +48,13 @@ class MangelBearbeitenScreen extends HookWidget {
                 IconButton(
                   onPressed: () {},
                   icon: SvgPicture.asset(
-                    'assets/images/pdf.svg',
+                    'assets/icons/pdf.svg',
                   ),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(
-                    Icons.delete_outline_sharp,
+                  icon: SvgPicture.asset(
+                    'assets/icons/trash.svg',
                   ),
                 ),
               ],
@@ -73,38 +72,36 @@ class MangelBearbeitenScreen extends HookWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: AppSizer.getWidth(context, 39),
+            horizontal: AppSizer.getWidth(context, 30),
             vertical: AppSizer.getHeight(context, 22),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FieldLable(
+              const FieldLable(
                 labelText: 'Projektstart',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: nameController,
                 hintText: '',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(context, 18),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Projektstart',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: descriptionController,
                 hintText: '',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(context, 18),
-              ),
+              SizedBox(height: AppSizer.getHeight(context, 18)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  FieldLable(
+                  const FieldLable(
                     labelText: 'Frist',
                   ),
                   Row(
@@ -125,7 +122,7 @@ class MangelBearbeitenScreen extends HookWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  FieldLable(
+                  const FieldLable(
                     labelText: 'Abgestellt am',
                   ),
                   Row(
@@ -146,7 +143,7 @@ class MangelBearbeitenScreen extends HookWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  FieldLable(
+                  const FieldLable(
                     labelText: 'Verursacher',
                   ),
                   Row(
@@ -166,9 +163,7 @@ class MangelBearbeitenScreen extends HookWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 18,
-              ),
+              const SizedBox(height: 18),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -179,7 +174,6 @@ class MangelBearbeitenScreen extends HookWidget {
                       fontSize: 12,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
-                      height: 0,
                     ),
                   ),
                   Container(
@@ -207,9 +201,10 @@ class MangelBearbeitenScreen extends HookWidget {
                       ],
                     ),
                     child: IconButton(
-                      icon: const Icon(
-                        Icons.camera_alt_outlined,
-                        size: 22,
+                      icon: SvgPicture.asset(
+                        width: 22,
+                        height: 22,
+                        'assets/icons/ph_camera.svg',
                       ),
                       onPressed: () {},
                     ),
@@ -221,7 +216,6 @@ class MangelBearbeitenScreen extends HookWidget {
                       fontSize: 12,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
-                      height: 0,
                     ),
                   ),
                   Container(
@@ -249,30 +243,28 @@ class MangelBearbeitenScreen extends HookWidget {
                       ],
                     ),
                     child: IconButton(
-                      icon: const Icon(
-                        Icons.add_photo_alternate,
-                        color: AppColors.primary,
+                      icon: SvgPicture.asset(
+                        width: 22,
+                        height: 22,
+                        'assets/icons/gallery_add.svg',
                       ),
                       onPressed: () {},
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: AppSizer.getHeight(context, 18),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Anmerkungen',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: fristController,
                 maxLines: 2,
                 hintText: '',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(context, 56),
-              ),
+              SizedBox(height: AppSizer.getHeight(context, 56)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -300,10 +292,10 @@ class MangelBearbeitenScreen extends HookWidget {
                       shape: const CircleBorder(),
                       backgroundColor: Colors.white,
                       elevation: 0,
-                      child: const Icon(
-                        Icons.save_outlined,
-                        color: AppColors.primary,
-                        size: 30,
+                      child: SvgPicture.asset(
+                        width: 30,
+                        height: 30,
+                        'assets/icons/save-line.svg',
                       ),
                     ),
                   ),
