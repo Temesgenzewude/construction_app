@@ -1,6 +1,7 @@
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NotificationScreen extends StatelessWidget {
   NotificationScreen({super.key});
@@ -18,7 +19,8 @@ class NotificationScreen extends StatelessWidget {
     {
       "time": "vor 3 Tagen",
       "title": "Bautagesbericht",
-      "description": "Herzlichen Glückwunsch, das Projekt Straßenbau wurde erfolgreich abgeschlossen.",
+      "description":
+          "Herzlichen Glückwunsch, das Projekt Straßenbau wurde erfolgreich abgeschlossen.",
     },
   ];
   @override
@@ -35,7 +37,9 @@ class NotificationScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.pop();
+                    },
                     child: const Icon(Icons.arrow_back),
                   ),
                   SizedBox(width: AppSizer.getWidth(context, 60)),
@@ -88,9 +92,8 @@ class NotificationScreen extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       final doc = items[index];
                       return Padding(
-                        padding: const EdgeInsets.only(bottom:30),
+                        padding: const EdgeInsets.only(bottom: 30),
                         child: Container(
-                          
                           padding: const EdgeInsets.all(10),
                           decoration: ShapeDecoration(
                             color: index == 0
@@ -102,7 +105,8 @@ class NotificationScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     doc["title"],

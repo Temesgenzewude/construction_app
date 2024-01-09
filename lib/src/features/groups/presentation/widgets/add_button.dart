@@ -22,7 +22,7 @@ class AddButton extends StatelessWidget {
           height: 52,
         ),
         onPressed: () {
-          context.goNamed(AppRoutes.AddGroupScreen.name);
+          context.pushNamed(AppRoutes.AddGroupScreen.name);
         },
       ),
     );

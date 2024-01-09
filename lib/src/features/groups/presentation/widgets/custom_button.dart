@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.goNamed(routeName);
+        context.pushNamed(routeName);
       },
       borderRadius: BorderRadius.circular(8),
       child: Container(

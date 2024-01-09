@@ -2,6 +2,7 @@ import 'package:construction_app/src/common_widgets/button.dart';
 import 'package:construction_app/src/common_widgets/setting_tile.dart';
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/project/presentation/widgets/setting_tile.dart';
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -74,7 +75,7 @@ class SampleProjectScreen extends StatelessWidget {
                 text: 'Tickets mit GPS position anzeigen',
                 icon: true,
               ),
-              SettingTitle(
+              const SettingTitle(
                 title: 'Projektverwaltung',
               ),
               SettingTile(
@@ -85,8 +86,11 @@ class SampleProjectScreen extends StatelessWidget {
               SettingTile(
                 text: 'Gruppen',
                 icon: true,
+                onPressed: () {
+                  context.pushNamed(AppRoutes.GroupsScreen.name);
+                },
               ),
-              SettingTitle(title: 'Projektinformationen'),
+              const SettingTitle(title: 'Projektinformationen'),
               Padding(
                 padding: const EdgeInsets.only(
                   top: 8.0,
@@ -174,7 +178,7 @@ class SampleProjectScreen extends StatelessWidget {
                   suffixText: '30.06.24',
                 ),
               ),
-              SettingTitle(title: 'Zusatzinformationen'),
+              const SettingTitle(title: 'Zusatzinformationen'),
               Padding(
                 padding: const EdgeInsets.only(
                   top: 8.0,
@@ -189,7 +193,7 @@ class SampleProjectScreen extends StatelessWidget {
               SizedBox(
                 height: AppSizer.getHeight(context, 40),
               ),
-              Button(
+              const Button(
                 backgroundColor: AppColors.primary,
                 textColor: Colors.white,
                 title: 'Details bearbeiten',
