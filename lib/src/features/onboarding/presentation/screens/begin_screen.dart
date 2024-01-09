@@ -60,8 +60,8 @@ class BeginScreen extends StatelessWidget {
                         CustomButton(
                           routeName: AppRoutes.SignupFirstScreen.name,
                           buttonName: 'Registrieren',
-                          topbottom: 15,
-                          leftright: 80,
+                          height: 15,
+                          width: 80,
                           buttonColor: AppColors.primary,
                           textColor: AppColors.secondary,
                         ),
@@ -69,8 +69,8 @@ class BeginScreen extends StatelessWidget {
                         CustomButton(
                           routeName: AppRoutes.LoginScreen.name,
                           buttonName: 'Anmeldung',
-                          topbottom: 15,
-                          leftright: 80,
+                          height: 15,
+                          width: 80,
                           buttonColor: AppColors.secondary,
                           textColor: AppColors.primary,
                         ),

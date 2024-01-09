@@ -2,8 +2,9 @@ import 'package:construction_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class SelectedDot extends StatelessWidget {
-  const SelectedDot({super.key, this.size});
+  const SelectedDot({super.key, this.size, this.selectedColor});
   final double? size;
+  final Color? selectedColor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +15,7 @@ class SelectedDot extends StatelessWidget {
           width: 20,
           height: 9,
           decoration: BoxDecoration(
-            color: AppColors.primary,
+            color: selectedColor ?? AppColors.primary,
             borderRadius: BorderRadius.circular(4),
           ),
         ),

@@ -87,8 +87,7 @@ class LoginScreen extends HookWidget {
                 obscurePassword: obscurePassword.value,
               ),
               SizedBox(height: AppSizer.getHeight(context, 8.0)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+              Wrap(
                 children: [
                   const Text(
                     'Sie haben noch kein Konto? ',
@@ -118,11 +117,11 @@ class LoginScreen extends HookWidget {
               SizedBox(height: AppSizer.getHeight(context, 20.0)),
               CustomButton(
                 onTap: () {
-                   context.goNamed(AppRoutes.DashboardScreen.name);
+                  context.goNamed(AppRoutes.DashboardScreen.name);
                 },
                 buttonName: 'Anmeldung',
-                topbottom: 15,
-                leftright: 80,
+                height: 15,
+                // leftright: 80,
                 buttonColor: AppColors.primary,
                 textColor: AppColors.secondary,
               ),

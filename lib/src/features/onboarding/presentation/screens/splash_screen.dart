@@ -69,8 +69,8 @@ class SplashScreen extends StatelessWidget {
                     child: CustomButton(
                       routeName: AppRoutes.OnBoardingScreen.name,
                       buttonName: 'Loslegen',
-                      topbottom: 15,
-                      leftright: 15,
+                      height: 15,
+                      width: 15,
                       buttonColor: AppColors.primary,
                       textColor: AppColors.secondary,
                     ),

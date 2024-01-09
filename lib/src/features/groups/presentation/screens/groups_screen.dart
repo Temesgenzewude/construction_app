@@ -1,7 +1,8 @@
+import 'package:construction_app/src/common_widgets/search_bar.dart';
 import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/groups/presentation/widgets/add_button.dart';
 import 'package:construction_app/src/features/groups/presentation/widgets/group_card.dart';
-import 'package:construction_app/src/features/groups/presentation/widgets/search_bar.dart';
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -33,37 +34,38 @@ class GroupsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
+      appBar: AppBar(
+        backgroundColor: AppColors.secondary,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            context.goNamed(AppRoutes.BeispielProjektScreen.name);
+          },
+        ),
+        title: const Text(
+          'Gruppen',
+          style: TextStyle(
+            color: AppColors.primary,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: AppSizer.getWidth(context, 25)),
+            child: const Icon(Icons.more_horiz),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: AppSizer.getHeight(context, 30)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      context.pop();
-                    },
-                    icon: const Icon(Icons.arrow_back),
-                  ),
-                  const Text(
-                    'Gruppen',
-                    style: TextStyle(
-                      color: AppColors.primary,
-                      fontSize: 16,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const Icon(Icons.more_horiz),
-                ],
-              ),
-              SizedBox(height: AppSizer.getHeight(context, 25)),
               //! SEARCH FIELD
-              const CustomSearchBar(),
+              const SearchBarWidget(),
               SizedBox(height: AppSizer.getHeight(context, 20)),
               Text(
                 'Alle Gruppen (${items.length})',
@@ -76,15 +78,15 @@ class GroupsScreen extends StatelessWidget {
               ),
               SizedBox(height: AppSizer.getHeight(context, 20)),
               Wrap(
-                spacing: AppSizer.getWidth(context, 16),
+                runSpacing: AppSizer.getWidth(context, 5),
                 children: const [
                   GroupCard(
-                    imageName: 'group-1.png',
+                    imageUrl: 'assets/images/group-1.png',
                     title: 'AutoCad-Team',
                     description: 'Mitglieder: 4',
                   ),
                   GroupCard(
-                    imageName: 'group-2.png',
+                    imageUrl: 'assets/images/group-2.png',
                     title: 'Client-Management',
                     description: 'Mitglieder: 2',
                   ),

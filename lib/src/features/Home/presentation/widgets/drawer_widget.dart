@@ -17,7 +17,9 @@ class DrawerWidget extends StatelessWidget {
           Icons.person_outline,
         ),
         'Mein Konto',
-        () {}
+        () {
+          context.pushNamed(AppRoutes.ProfileScreen.name);
+        }
       ],
       [
         const Icon(
