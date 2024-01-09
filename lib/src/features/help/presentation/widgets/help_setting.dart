@@ -1,16 +1,16 @@
-
-
+import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HelpSettingTile extends StatelessWidget {
   const HelpSettingTile({
     super.key,
-    required this.icon,
+    required this.iconPath,
     required this.text,
   });
 
   final String text;
-  final Icon icon;
+  final String iconPath;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,11 @@ class HelpSettingTile extends StatelessWidget {
       children: [
         Row(
           children: [
-            icon,
+            SvgPicture.asset(
+              iconPath,
+              width: AppSizer.getWidth(context, 20),
+              height: AppSizer.getWidth(context, 20),
+            ),
             const SizedBox(
               width: 10,
             ),

@@ -2,6 +2,7 @@ import 'package:construction_app/src/features/Home/presentation/widgets/drawer_s
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -13,8 +14,10 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final List settings = [
       [
-        const Icon(
-          Icons.person_outline,
+        SvgPicture.asset(
+          "assets/icons/user.svg",
+          width: AppSizer.getWidth(context, 23),
+          height: AppSizer.getWidth(context, 23),
         ),
         'Mein Konto',
         () {
@@ -22,8 +25,10 @@ class DrawerWidget extends StatelessWidget {
         }
       ],
       [
-        const Icon(
-          Icons.notifications_none,
+        SvgPicture.asset(
+          "assets/icons/bell.svg",
+          width: AppSizer.getWidth(context, 23),
+          height: AppSizer.getWidth(context, 23),
         ),
         'Benachrichtigung',
         () {
@@ -31,8 +36,10 @@ class DrawerWidget extends StatelessWidget {
         }
       ],
       [
-        const Icon(
-          Icons.help_outline,
+        SvgPicture.asset(
+          "assets/icons/help-circle.svg",
+          width: AppSizer.getWidth(context, 23),
+          height: AppSizer.getWidth(context, 23),
         ),
         'Unterstützung',
         () {
@@ -40,22 +47,28 @@ class DrawerWidget extends StatelessWidget {
         }
       ],
       [
-        const Icon(
-          Icons.settings,
+        SvgPicture.asset(
+          "assets/icons/settings.svg",
+          width: AppSizer.getWidth(context, 23),
+          height: AppSizer.getWidth(context, 23),
         ),
         'Einstellungen',
         () {}
       ],
       [
-        const Icon(
-          Icons.book,
+        SvgPicture.asset(
+          "assets/icons/book.svg",
+          width: AppSizer.getWidth(context, 23),
+          height: AppSizer.getWidth(context, 23),
         ),
         'Datenschutzrichtlinie',
         () {}
       ],
       [
-        const Icon(
-          Icons.logout,
+        SvgPicture.asset(
+          "assets/icons/log-out.svg",
+          width: AppSizer.getWidth(context, 23),
+          height: AppSizer.getWidth(context, 23),
         ),
         'Ausloggen',
         () {}
