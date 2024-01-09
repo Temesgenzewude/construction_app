@@ -108,7 +108,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
               SizedBox(
                 height: AppSizer.getHeight(context, 18),
               ),
-              FieldLable(
+              const FieldLable(
                 labelText: 'Projekbbild',
               ),
               DottedBorder(
@@ -141,125 +141,86 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
-                labelText: 'Projekbbild',
-              ),
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(labelText: 'Projekbbild'),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: projectNameEditingController,
                 hintText: 'Projektname eingeben',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Projektnummer',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: projectNumberEditingController,
                 hintText: 'Projektnummer Eingeben',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Projektstart',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: projectStartDateEditingController,
                 hintText: 'Datum eingeben',
                 isDatePicker: true,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Projektende',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: projectEndDateEditingController,
                 hintText: 'Datum eingeben',
                 isDatePicker: true,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Beschreibung',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: descriptionEditingController,
                 hintText: 'Beschreibung eingeben',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Projekt-Website',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: websiteEditingController,
                 hintText: 'Projekt-Website eingeben',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'StraBe',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: streatEditingController,
                 hintText: 'StraBe eingeben',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'PLZ',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: postalCodeEditingController,
                 hintText: 'PLZ eingeben',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Stadt',
               ),
               CustomTextField(
@@ -267,15 +228,11 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 hintText: 'Stadt eingeben',
                 isDatePicker: false,
               ),
-              SizedBox(
-                height: AppSizer.getHeight(
-                  context,
-                  18,
-                ),
-              ),
-              FieldLable(
+              SizedBox(height: AppSizer.getHeight(context, 18)),
+              const FieldLable(
                 labelText: 'Land',
               ),
+              SizedBox(height: AppSizer.getHeight(context, 3)),
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,

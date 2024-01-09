@@ -20,7 +20,7 @@ class FixedTextFieldWidget extends StatelessWidget {
       ),
       width: AppSizer.getWidth(
         context,
-        166,
+        160,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
