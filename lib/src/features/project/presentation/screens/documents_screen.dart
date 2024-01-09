@@ -1,4 +1,5 @@
 import 'package:construction_app/src/common_widgets/search_bar.dart';
+import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -127,6 +128,25 @@ class DocumentsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+              SizedBox(
+                height: AppSizer.getHeight(context, 200),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {},
+                    shape: const CircleBorder(),
+                    backgroundColor: Colors.white,
+                    elevation: 0,
+                    child: const Icon(
+                      Icons.add_circle_rounded,
+                      color: AppColors.primary,
+                      size: 63,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
