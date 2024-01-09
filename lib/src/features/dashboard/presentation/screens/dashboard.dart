@@ -1,4 +1,5 @@
 import 'package:construction_app/src/features/Home/presentation/screens/home_screen.dart';
+import 'package:construction_app/src/features/profile/presentation/screen/profile_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/create_project_screen.dart';
 import 'package:construction_app/src/features/project/presentation/screens/projects_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +15,7 @@ class DashboardScreen extends HookWidget {
       const HomeScreen(),
       ProjectsScreen(),
       const CreateProjectScreen(),
-      const Scaffold(
-        body: Center(child: Text("Profile Screen")),
-      )
+      const ProfileScreen(),
     ];
 
     final selectedPageIndex = useState(0);

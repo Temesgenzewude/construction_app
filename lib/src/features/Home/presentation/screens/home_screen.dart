@@ -55,7 +55,7 @@ class HomeScreen extends HookWidget {
         toolbarHeight: 100,
         flexibleSpace: Padding(
           padding: EdgeInsets.only(
-            top: AppSizer.getHeight(context, 5),
+            top: AppSizer.getHeight(context, 45),
           ),
           child: const HomeAppBarWidget(),
         ),

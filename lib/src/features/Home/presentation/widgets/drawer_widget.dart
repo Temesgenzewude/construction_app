@@ -24,7 +24,9 @@ class DrawerWidget extends StatelessWidget {
           Icons.notifications_none,
         ),
         'Benachrichtigung',
-        () {}
+        () {
+          context.pushNamed(AppRoutes.NotificationScreen.name);
+        }
       ],
       [
         const Icon(

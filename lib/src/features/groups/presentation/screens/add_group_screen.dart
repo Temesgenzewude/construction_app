@@ -41,7 +41,7 @@ class AddGroupScreen extends HookWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      context.goNamed(AppRoutes.GroupsScreen.name);
+                      context.pop();
                     },
                     child: const Icon(Icons.arrow_back),
                   ),

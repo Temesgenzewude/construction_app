@@ -4,6 +4,7 @@ import 'package:construction_app/src/features/groups/presentation/widgets/group_
 import 'package:construction_app/src/features/groups/presentation/widgets/search_bar.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class GroupsScreen extends StatelessWidget {
   GroupsScreen({super.key});
@@ -39,11 +40,16 @@ class GroupsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: AppSizer.getHeight(context, 30)),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.arrow_back),
-                  Text(
+                  IconButton(
+                    onPressed: () {
+                      context.pop();
+                    },
+                    icon: const Icon(Icons.arrow_back),
+                  ),
+                  const Text(
                     'Gruppen',
                     style: TextStyle(
                       color: AppColors.primary,
@@ -52,7 +58,7 @@ class GroupsScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Icon(Icons.more_horiz),
+                  const Icon(Icons.more_horiz),
                 ],
               ),
               SizedBox(height: AppSizer.getHeight(context, 25)),

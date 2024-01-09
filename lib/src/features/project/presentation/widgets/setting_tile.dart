@@ -6,11 +6,12 @@ class SettingTile extends StatelessWidget {
     required this.text,
     this.icon,
     this.suffixText,
+    this.onPressed,
   });
   final String text;
   final bool? icon;
   final String? suffixText;
-  final Function()? onPressed = () {};
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {

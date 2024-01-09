@@ -117,7 +117,9 @@ class LoginScreen extends HookWidget {
               ),
               SizedBox(height: AppSizer.getHeight(context, 20.0)),
               CustomButton(
-                onTap: () {},
+                onTap: () {
+                   context.goNamed(AppRoutes.DashboardScreen.name);
+                },
                 buttonName: 'Anmeldung',
                 topbottom: 15,
                 leftright: 80,
