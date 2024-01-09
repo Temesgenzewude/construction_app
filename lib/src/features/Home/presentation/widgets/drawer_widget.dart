@@ -55,7 +55,7 @@ class DrawerWidget extends StatelessWidget {
         const Icon(
           Icons.logout,
         ),
-        'Datenschutzrichtlinie',
+        'Ausloggen',
         () {}
       ],
     ];
