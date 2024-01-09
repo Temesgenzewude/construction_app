@@ -1,3 +1,4 @@
+import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,7 +37,9 @@ class MangelScreen extends StatelessWidget {
               ),
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed('${AppRoutes.MangelBearbeitenScreen.name}');
+              },
               icon: const Icon(
                 Icons.add_circle_outline,
               ),
