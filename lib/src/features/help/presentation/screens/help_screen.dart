@@ -43,47 +43,37 @@ class HelpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SettingTitle(title: 'Kontakt'),
+              const SettingTitle(title: 'Kontakt'),
               SizedBox(
                 height: AppSizer.getHeight(context, 14),
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.report_gmailerrorred_outlined,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/symbols_report.svg",
                 text: 'Fehler melden',
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.mail_outline,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/ep_message.svg",
                 text: 'Fultion anfragen',
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.help_outline,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/help-circle.svg",
                 text: 'Frage stellen',
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.tv,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/carbon_demo.svg",
                 text: 'Demo anfordern',
               ),
               SizedBox(
                 height: AppSizer.getHeight(context, 20),
               ),
-              SettingTitle(
+              const SettingTitle(
                 title: 'App Info',
               ),
               SizedBox(
                 height: AppSizer.getHeight(context, 14),
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.widgets_outlined,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/tdesign_app.svg",
                 text: 'Anwendung bewerten',
               ),
               const Text(
@@ -93,28 +83,22 @@ class HelpScreen extends StatelessWidget {
               SizedBox(
                 height: AppSizer.getHeight(context, 20),
               ),
-              SettingTitle(
+              const SettingTitle(
                 title: 'Debug Tools',
               ),
               SizedBox(
                 height: AppSizer.getHeight(context, 14),
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.storage,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/cache.svg",
                 text: 'Cache Ioschen',
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.file_download_outlined,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/upload.svg",
                 text: 'Downloads erzwingen',
               ),
-              HelpSettingTile(
-                icon: const Icon(
-                  Icons.file_upload_outlined,
-                ),
+              const HelpSettingTile(
+                iconPath: "assets/icons/upload.svg",
                 text: 'Uploads erzwingen',
               ),
             ],

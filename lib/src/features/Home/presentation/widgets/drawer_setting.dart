@@ -3,11 +3,15 @@
 import 'package:flutter/material.dart';
 
 class DrawerSetting extends StatelessWidget {
-  DrawerSetting(
-      {super.key, required this.icon, required this.text, required this.onTap});
+  DrawerSetting({
+    super.key,
+    required this.icon,
+    required this.text,
+    required this.onTap,
+  });
 
   String text;
-  Icon icon;
+  Widget icon;
   Function() onTap;
 
   @override
