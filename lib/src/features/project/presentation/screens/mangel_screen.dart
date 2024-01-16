@@ -38,7 +38,7 @@ class MangelScreen extends StatelessWidget {
             ),
             child: IconButton(
               onPressed: () {
-                context.pushNamed('${AppRoutes.MangelBearbeitenScreen.name}');
+                context.pushNamed(AppRoutes.MangelBearbeitenScreen.name);
               },
               icon: const Icon(
                 Icons.add_circle_outline,

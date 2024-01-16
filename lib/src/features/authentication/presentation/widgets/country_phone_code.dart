@@ -5,12 +5,10 @@ import 'package:flutter/material.dart';
 class CountryPhoneCodeInput extends StatelessWidget {
   const CountryPhoneCodeInput({
     super.key,
-    required this.countriesCode,
     required this.countryCodeState,
     required this.phoneNumberController,
   });
 
-  final List<Map<String, dynamic>> countriesCode;
   final ValueNotifier<String> countryCodeState;
   final TextEditingController phoneNumberController;
 

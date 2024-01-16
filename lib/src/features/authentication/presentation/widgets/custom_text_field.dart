@@ -2,20 +2,23 @@ import 'package:construction_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldWithlabel extends StatelessWidget {
-  const TextFieldWithlabel({
-    super.key,
-    required this.controller,
-    required this.label,
-    required this.obscurePassword,
-    this.prefixIcon,
-    this.suffixIcon,
-  });
+  const TextFieldWithlabel(
+      {super.key,
+      required this.controller,
+      required this.label,
+      required this.obscurePassword,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.hintText,
+      this.keyboardType});
 
   final TextEditingController controller;
   final String label;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool obscurePassword;
+  final String? hintText;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +36,13 @@ class TextFieldWithlabel extends StatelessWidget {
         ),
         const SizedBox(height: 2),
         CustomeTextField(
-          controller: controller,
-          obscurePassword: obscurePassword,
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
-        ),
+            controller: controller,
+            obscurePassword: obscurePassword,
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+            hintText: hintText,
+            keyboardType:keyboardType,
+            ),
       ],
     );
   }
@@ -50,12 +55,16 @@ class CustomeTextField extends StatelessWidget {
     required this.obscurePassword,
     required this.prefixIcon,
     required this.suffixIcon,
+    this.hintText,
+    this.keyboardType,
   });
 
   final TextEditingController controller;
   final bool obscurePassword;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final String? hintText;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +93,9 @@ class CustomeTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         obscureText: obscurePassword,
+        keyboardType: keyboardType,
         decoration: InputDecoration(
+          hintText: hintText,
           border: InputBorder.none,
           isDense: true,
           prefixIcon: prefixIcon,

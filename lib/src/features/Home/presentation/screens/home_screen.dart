@@ -5,7 +5,6 @@ import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/app_bar.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/drawer_widget.dart';
 import 'package:construction_app/src/features/Home/presentation/widgets/popup.dart';
-import 'package:construction_app/src/features/Home/presentation/widgets/project_card.dart';
 import 'package:construction_app/src/routing/routing.dart';
 
 import 'package:construction_app/src/utils/app_sizer.dart';
@@ -222,50 +221,8 @@ class HomeScreen extends HookWidget {
                   SizedBox(
                     height: AppSizer.getHeight(context, 18),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Andere Projekte',
-                        style: TextStyle(
-                          fontSize: AppSizer.getWidth(context, 16),
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        child: const Text(
-                          'Mehr sehen',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Row(
-                    children: [
-                      const ProjectCard(
-                        projectTitle: 'Eisenbahnbau',
-                        imageUrl: 'assets/images/project_picture_1.png',
-                      ),
-                      SizedBox(
-                        width: AppSizer.getWidth(context, 10),
-                      ),
-                      const ProjectCard(
-                        projectTitle: 'Mall-Bau',
-                        imageUrl: 'assets/images/project_picture_2.png',
-                      ),
-                    ],
-                  )
+                  
+                  
                 ],
               ),
             ),
