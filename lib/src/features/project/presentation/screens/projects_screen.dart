@@ -105,8 +105,6 @@ class ProjectsScreen extends StatelessWidget {
                 height: 5,
               ),
               Container(
-                // width: 316,
-                // height: AppSizer.getHeight(context, 275),
                 clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -147,50 +145,7 @@ class ProjectsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: AppSizer.getHeight(context, 45),
-              ),
-              Container(
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 2,
-                      offset: Offset(1, 1),
-                      spreadRadius: 0,
-                    ),
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 2,
-                      offset: Offset(-1, -1),
-                      spreadRadius: 0,
-                    )
-                  ],
-                ),
-                child: Column(
-                  children: List.generate(
-                    4,
-                    (index) => Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Card(
-                          cardText: cardItems[index * 2]['text'],
-                          onTap: () =>
-                              context.pushNamed(cardItems[index * 2]['path']),
-                        ),
-                        Card(
-                          cardText: cardItems[index * 2 + 1]['text'],
-                          onTap: () => context
-                              .pushNamed(cardItems[index * 2 + 1]['path']),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              SizedBox(height: AppSizer.getHeight(context, 45)),
               SizedBox(
                 height: AppSizer.getHeight(context, 30),
               ),

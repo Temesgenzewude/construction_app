@@ -13,9 +13,9 @@ class MangelBearbeitenScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final nameController = useTextEditingController(text: 'Fliesenleger');
+    final nameController = useTextEditingController();
     final descriptionController =
-        useTextEditingController(text: 'Beschreibung');
+        useTextEditingController();
     final fristController = useTextEditingController();
     return Scaffold(
       appBar: AppBar(
@@ -79,22 +79,22 @@ class MangelBearbeitenScreen extends HookWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const FieldLable(
-                labelText: 'Projektstart',
+                labelText: 'Name',
               ),
               SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: nameController,
-                hintText: '',
+                hintText: 'Fliesenleger',
                 isDatePicker: false,
               ),
               SizedBox(height: AppSizer.getHeight(context, 18)),
               const FieldLable(
-                labelText: 'Projektstart',
+                labelText: 'Beschreibung',
               ),
               SizedBox(height: AppSizer.getHeight(context, 3)),
               CustomTextField(
                 textEditingController: descriptionController,
-                hintText: '',
+                hintText: 'Sprung in der Fliese 3.0G RH',
                 isDatePicker: false,
               ),
               SizedBox(height: AppSizer.getHeight(context, 18)),

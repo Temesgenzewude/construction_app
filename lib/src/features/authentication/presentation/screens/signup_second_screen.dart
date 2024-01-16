@@ -2,7 +2,7 @@ import 'package:construction_app/src/constants/colors.dart';
 import 'package:construction_app/src/constants/constant.dart';
 import 'package:construction_app/src/features/authentication/presentation/widgets/country_phone_code.dart';
 import 'package:construction_app/src/features/authentication/presentation/widgets/custom_button.dart';
-import 'package:construction_app/src/features/authentication/presentation/widgets/drop_down_selection.dart';
+import 'package:construction_app/src/features/authentication/presentation/widgets/custom_text_field.dart';
 import 'package:construction_app/src/routing/routing.dart';
 import 'package:construction_app/src/utils/app_sizer.dart';
 import 'package:flutter/material.dart';
@@ -10,49 +10,13 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 
 class SignupSecondScreen extends HookWidget {
-  SignupSecondScreen({super.key});
-  final List<Map<String, dynamic>> companies = [
-    {
-      'name': 'Ethiopia',
-    },
-    {
-      'name': 'United Kingdom',
-    },
-    {
-      'name': 'Australia',
-    },
-  ];
-  final List<Map<String, dynamic>> countriesCode = [
-    {
-      'code': '+251',
-      'flag': "Et",
-    },
-    {
-      'code': '+44',
-      'flag': "UK",
-    },
-    {
-      'code': '+61',
-      'flag': "Au",
-    },
-  ];
-  final List<Map<String, dynamic>> employee = [
-    {
-      'name': 'Wählen Mitarbeiter',
-    },
-    {
-      'name': 'State 2',
-    },
-    {
-      'name': 'State 3',
-    },
-  ];
+  const SignupSecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final employeeState = useState("");
+    final unternehmenController = useTextEditingController();
+    final mitarbeiterController = useTextEditingController();
     final countryCodeState = useState("");
-    final companyState = useState("");
     TextEditingController phoneNumberController = useTextEditingController();
 
     return Scaffold(
@@ -123,11 +87,11 @@ class SignupSecondScreen extends HookWidget {
                 height: AppSizer.getHeight(context, 24.0),
               ),
 
-              //! COMPANY SELECTION
-              DropDownSelection(
-                companies: companies,
-                companyState: companyState,
-                lable: 'Unternehmen',
+              //! COMPANY
+              TextFieldWithlabel(
+                controller: unternehmenController,
+                label: 'Unternehmen',
+                obscurePassword: false,
                 hintText: 'Unternehmenstyp',
               ),
               SizedBox(
@@ -136,7 +100,6 @@ class SignupSecondScreen extends HookWidget {
 
               //! COUNTRY CODE SELECTION
               CountryPhoneCodeInput(
-                countriesCode: countriesCode,
                 countryCodeState: countryCodeState,
                 phoneNumberController: phoneNumberController,
               ),
@@ -145,13 +108,13 @@ class SignupSecondScreen extends HookWidget {
                 height: AppSizer.getHeight(context, 20.0),
               ),
 
-              //! EMPLOYEE SELECTION
-              DropDownSelection(
-                companies: employee,
-                companyState: employeeState,
-                lable: 'Mitarbeiter',
-                hintText: 'Wählen Mitarbeiter',
-              ),
+              //! EMPLOYEE
+              TextFieldWithlabel(
+                  controller: mitarbeiterController,
+                  label: 'Mitarbeiter',
+                  obscurePassword: false,
+                  hintText: 'Wählen Mitarbeiter',
+                  keyboardType: TextInputType.phone),
               SizedBox(
                 height: AppSizer.getHeight(context, 20.0),
               ),
